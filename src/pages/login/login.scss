@@ -1,0 +1,41 @@
+page-login {
+    .content .img {
+        height: 300px;
+        width: 300px;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+    .content .inputs {
+        border: none;  
+    }
+    .label-md,
+    .label-ios{
+      color: black;
+    }
+    .content .inputs ion-item,
+    .content .inputs .item-inner{
+        color: black;
+        border-radius: 25px;
+        margin-bottom: 5px;
+    }
+    .text-input::-moz-placeholder {
+        color: black;
+        font-weight: bold;
+        font-size: 15px;
+    }
+      
+    .text-input:-ms-input-placeholder {
+        color: black;
+        font-weight: bold;
+        font-size: 15px;
+    }
+      
+    .text-input::-webkit-input-placeholder {
+        color: black;
+        font-weight: bold;
+        font-size: 15px;
+    }
+}
