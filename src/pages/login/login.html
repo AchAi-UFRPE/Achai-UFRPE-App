@@ -1,4 +1,4 @@
-<ion-content padding>
+<ion-content padding> 
   <div class="content">
     <div class="img">
       <img src="assets/imgs/achai_logo.png">
@@ -6,14 +6,21 @@
     <div class="inputs">
       <ion-list>
         <ion-item no-lines>
-          <ion-input type="text" placeholder="Email"></ion-input>
+          <ion-input id="email" type="text" placeholder="Email"></ion-input>
         </ion-item>
       
         <ion-item no-lines>
-          <ion-input type="password" placeholder="Senha"></ion-input>
+          <ion-input id="password" type="password" placeholder="Senha"></ion-input>
         </ion-item>
       </ion-list>
     </div>
-    
+    <div class="btn">
+      <button id="btn_entrar" (click)="entrar()"ion-button round full >Entrar</button>
+    </div>
+  <div class="text">
+      <ion-label id="label_cadastro" (click)="cadastro()"> Não possui conta?Cadastre-se! </ion-label>
+    </div>
   </div>
+   
+    
 </ion-content>

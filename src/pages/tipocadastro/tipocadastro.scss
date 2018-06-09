@@ -1,4 +1,4 @@
-page-login {
+page-tipocadastro {
     .content {
         background: #FF5F6D;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to top, #FF5F6D, #FFC371);  /* Chrome 10-25, Safari 5.1-6 */
@@ -7,8 +7,15 @@ page-login {
         margin-bottom: auto;
     }
     .text {
+        margin-top: 20%;
         margin-left: auto;
         margin-right: auto;
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    .label-md,
+    .label-ios{
+      color: #FFC371;
     }
     .content .img {
         height: 300px;
@@ -17,48 +24,27 @@ page-login {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 10px;
+        margin-top: 15%;
     }
-    .content .btn{
-        margin-right: auto;
-        margin-left: auto;
+    .btn{
+        margin-left: 15%;
+    }
+    .content .btn_1{
         font-weight: bold;
-        font-size: 0.9em;
+        width: 40%;
+        height: 20%;
     }
+    .content .btn_2{
+        font-weight: bold;
+        margin-left: 2%;
+        height: 20%;
+        width: 40%;
+    }
+    div > div {
+    display: inline-block;
+}
     .content .btn button{
         background-color: #FFC371;
-    }
-    .content .inputs {
-        border: none;  
-    }
-    .label-md,
-    .label-ios{
-      color: #FFC371;
-
-    }
-    .content .inputs ion-item,
-    .content .inputs .item-inner{
-        color: #FFC371;
-        border-radius: 25px;
-        margin-bottom: 2%;
-    }
-    .text-input::-moz-placeholder {
-        font-size: 0.9em;
-        color: #FFC371;
-        font-weight: bold;
-        font-size: 0.9em;
-    }
-      
-    .text-input:-ms-input-placeholder {
-        color: #FFC371;
-        font-weight: bold;
-        font-size: 1.0em;
-    }
-      
-    .text-input::-webkit-input-placeholder {
-        color: #FFC371;
-        font-weight: bold;
-        font-size: 15px;
     }
     /* ------------------------------
     MEDIAQUERIES
