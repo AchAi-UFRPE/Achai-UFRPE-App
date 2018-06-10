@@ -8,13 +8,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage} from '../pages/login/login';
 import { TipocadastroPage } from '../pages/tipocadastro/tipocadastro'
+import { CadastroClientePage } from '../pages/cadastro-cliente/cadastro-cliente';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    TipocadastroPage
+    TipocadastroPage,
+    CadastroClientePage
     
   ],
   imports: [
@@ -26,7 +28,8 @@ import { TipocadastroPage } from '../pages/tipocadastro/tipocadastro'
     MyApp,
     HomePage,
     LoginPage,
-    TipocadastroPage
+    TipocadastroPage,
+    CadastroClientePage
   ],
   providers: [
     StatusBar,

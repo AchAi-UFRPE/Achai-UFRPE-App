@@ -1,23 +1,10 @@
-page-login {
-    .content {
-        background: #FF5F6D;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to top, #FF5F6D, #FFC371);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to top, #FF5F6D, #FFC371); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        margin-top: auto;
-        margin-bottom: auto;
-    }
+page-cadastro-cliente {
     .text {
         margin-left: auto;
         margin-right: auto;
-    }
-    .content .img {
-        height: 300px;
-        width: 300px;
-        margin-bottom: 5%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10px;
+        font-weight: bold;
+        font-size: 1.8em;
+        margin-bottom: 3%;
     }
     .content .btn{
         margin-right: auto;
@@ -25,37 +12,40 @@ page-login {
         font-weight: bold;
         font-size: 0.9em;
     }
-    .content .btn button{
-        background-color: #FFC371;
-    }
-    .content .inputs {
-        border: none;  
+    .btn button{
+        background-color: #FF5F6D;
     }
     .label-md,
     .label-ios{
-      color: #FFC371;
-
+      color: #FF5F6D;
+    }
+    .content .img {
+        height: 230px;
+        width: 230px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     .content .inputs ion-item,
     .content .inputs .item-inner{
-        color: #FFC371;
+        color: #FF5F6D;
         border-radius: 25px;
         margin-bottom: 2%;
     }
     .text-input::-moz-placeholder {
         font-size: 0.9em;
-        color: #FFC371;
+        color: #FF5F6D;
         font-weight: bold;
     }
       
     .text-input:-ms-input-placeholder {
-        color: #FFC371;
+        color: #FF5F6D;
         font-weight: bold;
         font-size: 1.0em;
     }
       
     .text-input::-webkit-input-placeholder {
-        color: #FFC371;
+        color: #FF5F6D;
         font-weight: bold;
         font-size: 15px;
     }
