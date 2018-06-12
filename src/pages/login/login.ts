@@ -10,6 +10,11 @@ import { TipocadastroPage } from '../tipocadastro/tipocadastro';
 })
 export class LoginPage {
 
+  public loginDados = {
+    email: null,
+    senha: null
+  }
+
   constructor(public navCtrl: NavController, 
     public navParams: NavParams) {
   }
@@ -20,5 +25,9 @@ export class LoginPage {
 
   cadastro():void {
     this.navCtrl.push(TipocadastroPage);
+  }
+
+  entrar():void{
+    
   }
 }

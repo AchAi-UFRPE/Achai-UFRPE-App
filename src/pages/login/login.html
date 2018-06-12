@@ -6,11 +6,11 @@
     <div class="inputs">
       <ion-list>
         <ion-item no-lines>
-          <ion-input id="email" type="text" placeholder="Email"></ion-input>
+          <ion-input id="email" type="email" placeholder="Email" [(ngModel)]="loginDados.email" autofocus required></ion-input>
         </ion-item>
       
         <ion-item no-lines>
-          <ion-input id="password" type="password" placeholder="Senha"></ion-input>
+          <ion-input id="password" type="password" placeholder="Senha" [(ngModel)]="loginDados.senha" required></ion-input>
         </ion-item>
       </ion-list>
     </div>
