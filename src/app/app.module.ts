@@ -9,7 +9,9 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage} from '../pages/login/login';
 import { TipocadastroPage } from '../pages/tipocadastro/tipocadastro'
 import { CadastroClientePage } from '../pages/cadastro-cliente/cadastro-cliente';
+import { LoginProvider } from '../providers/login/loginService';
 
+import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +23,8 @@ import { CadastroClientePage } from '../pages/cadastro-cliente/cadastro-cliente'
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +37,8 @@ import { CadastroClientePage } from '../pages/cadastro-cliente/cadastro-cliente'
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoginProvider
   ]
 })
 export class AppModule {}
