@@ -5,10 +5,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+
+//PAGES
 import { HomePage } from '../pages/home/home';
 import { LoginPage} from '../pages/login/login';
 import { TipocadastroPage } from '../pages/tipocadastro/tipocadastro'
 import { CadastroClientePage } from '../pages/cadastro-cliente/cadastro-cliente';
+import { CadastroEntregadorPage } from '../pages/cadastro-entregador/cadastro-entregador';
+
+//PROVIDERS
 import { LoginProvider } from '../providers/login/loginService';
 
 import { HttpModule } from '@angular/http';
@@ -18,7 +23,8 @@ import { HttpModule } from '@angular/http';
     HomePage,
     LoginPage,
     TipocadastroPage,
-    CadastroClientePage
+    CadastroClientePage,
+    CadastroEntregadorPage
     
   ],
   imports: [
@@ -32,7 +38,8 @@ import { HttpModule } from '@angular/http';
     HomePage,
     LoginPage,
     TipocadastroPage,
-    CadastroClientePage
+    CadastroClientePage,
+    CadastroEntregadorPage
   ],
   providers: [
     StatusBar,

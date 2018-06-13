@@ -1,0 +1,63 @@
+page-cadastro-entregador {
+    .text {
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: bold;
+        font-size: 1.8em;
+        margin-bottom: 3%;
+    }
+    .content .btn{
+        margin-right: auto;
+        margin-left: auto;
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+    .btn button{
+        background-color: #FF5F6D;
+    }
+    .label-md,
+    .label-ios{
+      color: #FF5F6D;
+    }
+    .content .img {
+        height: 230px;
+        width: 230px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .content .inputs ion-item,
+    .content .inputs .item-inner{
+        color: #FF5F6D;
+        border-radius: 25px;
+        margin-bottom: 2%;
+    }
+    .text-input::-moz-placeholder {
+        font-size: 0.9em;
+        color: #FF5F6D;
+        font-weight: bold;
+    }
+      
+    .text-input:-ms-input-placeholder {
+        color: #FF5F6D;
+        font-weight: bold;
+        font-size: 1.0em;
+    }
+      
+    .text-input::-webkit-input-placeholder {
+        color: #FF5F6D;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .btn button{
+        margin-bottom: 20px;
+    }
+    /* ------------------------------
+    MEDIAQUERIES
+    ---------------------------------*/
+    @media (min-width: 414px) and (max-width:736px){ 
+        .img{
+            margin-top: 20% !important
+        }
+    }
+}
