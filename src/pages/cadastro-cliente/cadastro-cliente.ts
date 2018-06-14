@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Alert } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { CadastroClienteProvider } from '../../providers/login/cadastroClienteService';
+import { HomePage } from '../home/home';
+
 
 
 @IonicPage()
@@ -10,13 +13,46 @@ import { LoginPage } from '../login/login';
 })
 export class CadastroClientePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public dadosCadastro = {
+    nome: null,
+    email: null,
+    senha: null
+  }
+
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public cadastroClienteProvider: CadastroClienteProvider,
+    public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroClientePage');
   }
+  
   irLogin():void{
-    this.navCtrl.push(LoginPage)
+
+    this.cadastroClienteProvider.postCadastroCliente('/users', 
+    {"nome":""+this.dadosCadastro.nome,"cpf":"123321",
+    "email":""+this.dadosCadastro.email,"senha":""+this.dadosCadastro.senha})
+    .then(dadosCadastro => {
+      
+      //console.log(dadosLogin); // data received by server 
+      if (dadosCadastro['_body'] != "[]"){        
+        this.navCtrl.push(HomePage,{DadosLogin: dadosCadastro['_body']});
+      }else{        
+        this.showAlertFailedCadastro();
+      }
+    }, (err) => {
+        console.log("Erro", err);
+    });
+  }
+
+  showAlertFailedCadastro() {
+    const alert = this.alertCtrl.create({
+      title: 'Usuário',
+      subTitle: 'Cadastro não pode ser efetuado',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 }

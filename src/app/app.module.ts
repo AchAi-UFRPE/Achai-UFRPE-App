@@ -15,8 +15,8 @@ import { CadastroEntregadorPage } from '../pages/cadastro-entregador/cadastro-en
 
 //PROVIDERS
 import { LoginProvider } from '../providers/login/loginService';
-
 import { HttpModule } from '@angular/http';
+import { CadastroClienteProvider } from '../providers/login/cadastroClienteService';
 @NgModule({
   declarations: [
     MyApp,
@@ -45,7 +45,8 @@ import { HttpModule } from '@angular/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LoginProvider
+    LoginProvider,
+    CadastroClienteProvider
   ]
 })
 export class AppModule {}
