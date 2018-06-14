@@ -8,18 +8,27 @@
   </div>
   <div class="inputs">
     <ion-list>
+
       <ion-item>
         <ion-input id="nome_cliente" type="text"placeholder="Nome" [(ngModel)]= "dadosCadastro.nome"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-input id="email_cliente" type="text"placeholder="Email" [(ngModel)]= "dadosCadastro.email"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-input id="senha_cliente" type="password"placeholder="Senha" [(ngModel)]= "dadosCadastro.senha"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-input id="conf_senha_cliente" type="password" placeholder="Confirmação da senha"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-input id="cpf_cliente" type="text" placeholder="CPF"></ion-input>
+      </ion-item>
+
     </ion-list>
   </div>
   <div class="btn">
