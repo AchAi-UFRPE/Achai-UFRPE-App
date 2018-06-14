@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, Alert } from 'ionic-angular';
 import { LoginPage } from '../login/login';
-import { CadastroClienteProvider } from '../../providers/login/cadastroClienteService';
+import { CadastroClienteProvider } from '../../providers/services/cadastroClienteService';
 import { HomePage } from '../home/home';
 
 

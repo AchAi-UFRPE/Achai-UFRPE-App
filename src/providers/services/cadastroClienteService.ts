@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { RequestOptions, Headers, Http, HttpModule } from '@angular/http';
+import { RequestOptions, Headers, Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 
@@ -11,7 +10,7 @@ import 'rxjs/add/operator/do';
   and Angular DI.
 */
 @Injectable()
-export class LoginProvider {
+export class CadastroClienteProvider {
 
   UrlServer:any = 'https://achai.herokuapp.com';
 
@@ -19,23 +18,16 @@ export class LoginProvider {
     console.log('Hello LoginProvider Provider');
   }
 
-  postLogin(UrlApi, data) {
+  postCadastroCliente(UrlApi, data) {
     UrlApi= this.UrlServer+UrlApi;
     return new Promise((resolve, reject) => {
 
-      this.http.post(UrlApi, data,this.createRequestOptions()).subscribe(res => {
+      this.http.post(UrlApi, data, undefined).subscribe(res => {
           resolve(res);
         }, (err) => {
           reject(err);
         });
     });
-  }
-
-  private createRequestOptions() {
-    let headers = new Headers();
-    headers.append("Authorization", 'JWT '+localStorage.getItem("token"));
-    headers.append("Content-Type", "application/json");
-    return new RequestOptions({ headers: headers });
   }
 
 }

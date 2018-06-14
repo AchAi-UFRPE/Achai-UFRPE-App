@@ -14,9 +14,9 @@ import { CadastroClientePage } from '../pages/cadastro-cliente/cadastro-cliente'
 import { CadastroEntregadorPage } from '../pages/cadastro-entregador/cadastro-entregador';
 
 //PROVIDERS
-import { LoginProvider } from '../providers/login/loginService';
+import { LoginProvider } from '../providers/services/loginService';
 import { HttpModule } from '@angular/http';
-import { CadastroClienteProvider } from '../providers/login/cadastroClienteService';
+import { CadastroClienteProvider } from '../providers/services/cadastroClienteService';
 @NgModule({
   declarations: [
     MyApp,

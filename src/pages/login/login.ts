@@ -2,12 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TipocadastroPage } from '../tipocadastro/tipocadastro';
 import { Http } from '@angular/http';
-import { LoginProvider } from '../../providers/login/loginService';
+import { LoginProvider } from '../../providers/services/loginService';
 import { HomePage } from '../home/home';
 import {AlertController} from 'ionic-angular';
 import{LoadingController} from 'ionic-angular';
-
-
 
 
 @IonicPage()
