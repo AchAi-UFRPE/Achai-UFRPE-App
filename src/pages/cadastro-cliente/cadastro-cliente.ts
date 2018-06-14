@@ -31,9 +31,7 @@ export class CadastroClientePage {
   
   irLogin():void{
 
-    this.cadastroClienteProvider.postCadastroCliente('/users', 
-    {"nome":""+this.dadosCadastro.nome,"cpf":"123321",
-    "email":""+this.dadosCadastro.email,"senha":""+this.dadosCadastro.senha})
+    this.cadastroClienteProvider.postCadastroCliente('/users', this.dadosCadastro)
     .then(dadosCadastro => {
       
       //console.log(dadosLogin); // data received by server 
