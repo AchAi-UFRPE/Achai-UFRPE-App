@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoginPage } from '../login/login';
+
 
 @IonicPage()
 @Component({
@@ -14,5 +16,7 @@ export class CadastroClientePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroClientePage');
   }
-
+  irLogin():void{
+    this.navCtrl.push(LoginPage)
+  }
 }
