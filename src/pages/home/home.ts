@@ -8,10 +8,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  loginEmail: string;
+  DadosLogin = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.loginEmail = this.navParams.get("email");
+  this.DadosLogin = this.navParams.get("DadosLogin");
+  console.log(this.DadosLogin);
   }
 
 }

@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TipocadastroPage } from '../tipocadastro/tipocadastro';
 import { Http } from '@angular/http';
-import { map } from 'rxjs/operators/map';
 import { LoginProvider } from '../../providers/login/loginService';
-import { stringify } from '@angular/compiler/src/util';
 import { HomePage } from '../home/home';
+import {AlertController} from 'ionic-angular';
+import{LoadingController} from 'ionic-angular';
+
 
 
 
@@ -24,7 +25,9 @@ export class LoginPage {
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     private http: Http,
-    public LoginProvider: LoginProvider) {
+    public LoginProvider: LoginProvider,
+    public alertCtrl: AlertController,
+    public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -36,18 +39,28 @@ export class LoginPage {
   }
 
   entrar():void{
-
-    this.LoginProvider.postLogin('/user', {"email":""+this.loginDados.email,"senha":""+this.loginDados.senha})
-    .then(data => {
+    
+    this.LoginProvider.postLogin('/login', this.loginDados)
+    .then(dadosLogin => {
       
-      console.log(data); // data received by server 
-      if (data['_body'] != "[]"){
-        this.navCtrl.push(HomePage,{email: this.loginDados.email});
-      }else{
-        console.log("Usuário n tem permissão")
+      //console.log(dadosLogin); // data received by server 
+      if (dadosLogin['_body'] != "[]"){        
+        this.navCtrl.push(HomePage,{DadosLogin: dadosLogin['_body']});
+      }else{        
+        this.showAlertFailedLogin();
       }
     }, (err) => {
         console.log("Erro", err);
     });
   }
+
+  showAlertFailedLogin() {
+    const alert = this.alertCtrl.create({
+      title: 'Usuário',
+      subTitle: 'Login ou Senha incorreto',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
 }
