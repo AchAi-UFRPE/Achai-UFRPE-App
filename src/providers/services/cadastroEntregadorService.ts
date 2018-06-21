@@ -10,7 +10,7 @@ import 'rxjs/add/operator/do';
   and Angular DI.
 */
 @Injectable()
-export class CadastroClienteProvider {
+export class CadastroEntregadorProvider {
 
   UrlServer:any = 'https://achai.herokuapp.com';
 
@@ -18,11 +18,11 @@ export class CadastroClienteProvider {
     console.log('Hello LoginProvider Provider');
   }
 
-  postCadastroCliente(UrlApi, data) {
+  postCadastroEntregador(UrlApi, data) {
     UrlApi= this.UrlServer+UrlApi;
     return new Promise((resolve, reject) => {
 
-      this.http.post(UrlApi, data, undefined).subscribe(res => {
+      this.http.post(UrlApi, data).subscribe(res => {
           resolve(res);
         }, (err) => {
           reject(err);

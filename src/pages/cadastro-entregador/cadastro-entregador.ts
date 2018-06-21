@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { CadastroEntregadorProvider } from '../../providers/services/cadastroEntregadorService';
 
 @IonicPage()
 @Component({
@@ -9,16 +10,48 @@ import { LoginPage } from '../login/login';
 })
 export class CadastroEntregadorPage {
 
+  public dadosCadastroEntregador = {
+    nome: null,
+    email: null,
+    senha: null,
+    cpf: null,
+    cnh: null
+  }
+
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams) {
+    public navParams: NavParams,
+    public alertCtrl: AlertController,
+    public CadastroEntregadorProvider: CadastroEntregadorProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroEntregadorPage');
   }
   irLogin():void{
-    this.navCtrl.push(LoginPage)
+   
+    this.CadastroEntregadorProvider.postCadastroEntregador('/workers', this.dadosCadastroEntregador)
+    .then(dadosCadastro => {  
+      
+      //console.log(dadosLogin); // data received by server 
+      if (dadosCadastro['_body'] != "[]"){        
+        this.navCtrl.push(LoginPage);
+      }else{        
+        this.showAlertFailedCadastro();
+      }
+    }, (err) => {
+        console.log("Erro", err);
+    });
+
+  }
+
+  showAlertFailedCadastro() {
+    const alert = this.alertCtrl.create({
+      title: 'Usuário',
+      subTitle: 'Cadastro não pode ser efetuado',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }

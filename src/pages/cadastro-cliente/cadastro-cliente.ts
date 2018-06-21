@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, Alert } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { CadastroClienteProvider } from '../../providers/services/cadastroClienteService';
-import { HomePage } from '../home/home';
-
 
 
 @IonicPage()
@@ -37,7 +35,7 @@ export class CadastroClientePage {
       
       //console.log(dadosLogin); // data received by server 
       if (dadosCadastro['_body'] != "[]"){        
-        this.navCtrl.push(HomePage,{DadosLogin: dadosCadastro['_body']});
+        this.navCtrl.push(LoginPage);
       }else{        
         this.showAlertFailedCadastro();
       }
