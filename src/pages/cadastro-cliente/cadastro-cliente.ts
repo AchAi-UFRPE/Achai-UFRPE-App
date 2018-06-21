@@ -16,7 +16,8 @@ export class CadastroClientePage {
   public dadosCadastro = {
     nome: null,
     email: null,
-    senha: null
+    senha: null,
+    cpf: null
   }
 
   constructor(public navCtrl: NavController, 
