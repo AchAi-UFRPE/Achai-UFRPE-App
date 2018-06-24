@@ -1,32 +1,36 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title >
+      Home
     </ion-title>
   </ion-navbar>
+  <ion-searchbar placeholder="Buscar Produtos" (ionInput)="getItens($event)">
+      [(ngModel)]="myInput"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="getItens($event)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-searchbar placeholder="Buscar Produtos">
-    [(ngModel)]="myInput"
-    [showCancelButton]="shouldShowCancel"
-    (ionInput)="onInput($event)"
-    (ionCancel)="onCancel($event)">
-  </ion-searchbar>  
-  <ion-list *ngFor="let user of items">
-    <ion-item-sliding>
-      <ion-item>
+<ion-content padding>  
+  <ion-list *ngFor="let user of items">    
+      <ion-item (click)="itemClicked()">
         <ion-avatar item-start>
-          <img src="assets/imgs/intro01.png">
+          <img src="assets/imgs/achai_logo.png">
         </ion-avatar>
         <p>Produto: {{user.cpf}}</p>
         <p>Nome: {{user.name}}</p>
         <p>E-mail: {{user.email}}</p>
-      </ion-item>
-    </ion-item-sliding>
+      </ion-item>    
   </ion-list>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+ 
+  <ion-fab right bottom>
+    <button ion-fab mini="light"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

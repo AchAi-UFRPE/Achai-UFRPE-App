@@ -18,6 +18,7 @@ import { LoginProvider } from '../providers/services/loginService';
 import { HttpModule } from '@angular/http';
 import { CadastroClienteProvider } from '../providers/services/cadastroClienteService';
 import { CadastroEntregadorProvider } from '../providers/services/cadastroEntregadorService';
+import { ProdutosProvider } from '../providers/services/produtosService';
 @NgModule({
   declarations: [
     MyApp,
@@ -48,7 +49,8 @@ import { CadastroEntregadorProvider } from '../providers/services/cadastroEntreg
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginProvider,
     CadastroClienteProvider,
-    CadastroEntregadorProvider
+    CadastroEntregadorProvider,
+    ProdutosProvider
   ]
 })
 export class AppModule {}
