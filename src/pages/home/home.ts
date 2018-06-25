@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { ProdutosProvider } from '../../providers/services/produtosService';
+import { CarrinhoPage } from '../carrinho/carrinho';
+import { PerfilDoUsuarioPage } from '../perfil-do-usuario/perfil-do-usuario';
 
 
 @Component({
@@ -9,7 +11,7 @@ import { ProdutosProvider } from '../../providers/services/produtosService';
 })
 export class HomePage {
 
-  DadosLogin = {};
+  DadosLogin = {};  
   items: any;
   lista: any;
 
@@ -17,7 +19,8 @@ export class HomePage {
     public navParams: NavParams,
     public produtosProvider: ProdutosProvider,
     public alertCtrl: AlertController) {
-      this.inicializaLista()  
+      this.inicializaLista()
+      this.DadosLogin = this.navParams.get("DadosLogin")      
   }
 
   inicializaLista() {
@@ -35,8 +38,8 @@ export class HomePage {
 
   itemClicked(){
     const alert = this.alertCtrl.create({
-      title: 'Deseja adicionar o item ao carrinho?',      
-      buttons: ['Sim','Não']
+      title: 'Deseja adicionar o item ao carrinho?',            
+      buttons: [{text:'Sim'},'Não']
     });
     alert.present();
   }
@@ -55,6 +58,15 @@ export class HomePage {
       })
     }
   }
+
+  goToCarrinho(){
+    this.navCtrl.push(CarrinhoPage);
+  }
+
+  goToPerfil(){
+    this.navCtrl.push(PerfilDoUsuarioPage);
+  }
+
 }
 
 

@@ -19,6 +19,8 @@ import { HttpModule } from '@angular/http';
 import { CadastroClienteProvider } from '../providers/services/cadastroClienteService';
 import { CadastroEntregadorProvider } from '../providers/services/cadastroEntregadorService';
 import { ProdutosProvider } from '../providers/services/produtosService';
+import { CarrinhoPage } from '../pages/carrinho/carrinho';
+import { PerfilDoUsuarioPage } from '../pages/perfil-do-usuario/perfil-do-usuario';
 @NgModule({
   declarations: [
     MyApp,
@@ -26,7 +28,9 @@ import { ProdutosProvider } from '../providers/services/produtosService';
     LoginPage,
     TipocadastroPage,
     CadastroClientePage,
-    CadastroEntregadorPage
+    CadastroEntregadorPage,
+    CarrinhoPage,
+    PerfilDoUsuarioPage
     
   ],
   imports: [
@@ -41,7 +45,9 @@ import { ProdutosProvider } from '../providers/services/produtosService';
     LoginPage,
     TipocadastroPage,
     CadastroClientePage,
-    CadastroEntregadorPage
+    CadastroEntregadorPage,
+    CarrinhoPage,
+    PerfilDoUsuarioPage
   ],
   providers: [
     StatusBar,
