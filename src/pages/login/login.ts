@@ -54,7 +54,6 @@ export class LoginPage {
 
   showAlertFailedLogin() {
     const alert = this.alertCtrl.create({
-      title: 'Usuário',
       subTitle: 'Login ou Senha incorreto',
       buttons: ['OK']
     });

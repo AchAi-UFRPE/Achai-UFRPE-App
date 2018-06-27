@@ -1,34 +1,30 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title >
-      Home
-    </ion-title>
-  </ion-navbar>
-  <ion-searchbar placeholder="Buscar Produtos" (ionInput)="getItens($event)">
-      [(ngModel)]="myInput"
-      [showCancelButton]="shouldShowCancel"
-      (ionInput)="getItens($event)"
-      (ionCancel)="onCancel($event)">
-    </ion-searchbar>
-</ion-header>
-
-<ion-content padding>  
-  <ion-list *ngFor="let user of items">    
-      <ion-item (click)="itemClicked(user)">
-        <ion-avatar item-start>
-          <img src="assets/imgs/achai_logo.png">
-        </ion-avatar>
-        <p>Produto: {{user.cpf}}</p>
-        <p>Nome: {{user.name}}</p>
-        <p>E-mail: {{user.email}}</p>        
-      </ion-item>         
-  </ion-list>
- 
-  <ion-fab right bottom>
-    <button ion-fab mini="light"><ion-icon name="add"></ion-icon></button>
-    <ion-fab-list side="left">
-      <button ion-fab (click)="goToCarrinho()"><ion-icon name="md-cart"></ion-icon></button>
-      <button ion-fab (click)="goToPerfil()"><ion-icon name="person"></ion-icon></button>      
-    </ion-fab-list>
-  </ion-fab>
-</ion-content>
+    <ion-searchbar placeholder="Buscar Produtos" (ionInput)="getItens($event)">
+        [(ngModel)]="myInput"
+        [showCancelButton]="shouldShowCancel"
+        (ionInput)="getItens($event)"
+        (ionCancel)="onCancel($event)">
+      </ion-searchbar>
+  </ion-header>
+  
+  <ion-content padding>  
+    <ion-list *ngFor="let user of items">    
+        <ion-item (click)="itemClicked(user)">
+          <ion-avatar item-start>
+            <img src="assets/imgs/achai_logo.png">
+          </ion-avatar>
+          <p>Produto: {{user.cpf}}</p>
+          <p>Nome: {{user.name}}</p>
+          <p>E-mail: {{user.email}}</p>        
+        </ion-item>         
+    </ion-list>
+   
+    <ion-fab right bottom>
+      <button ion-fab mini="light"><ion-icon name="add"></ion-icon></button>
+      <ion-fab-list side="left">
+        <button ion-fab (click)="goToCarrinho()"><ion-icon name="md-cart"></ion-icon></button>
+        <button ion-fab (click)="goToPerfil()"><ion-icon name="person"></ion-icon></button>      
+      </ion-fab-list>
+    </ion-fab>
+  </ion-content>
+  
