@@ -86,7 +86,7 @@ export class CadastroClientePage {
       if(this.confirmacaoEmail(email_usuario)){
         if(this.confirmacaoSenha(senha_usuraio)){
           if(this.confirmacaoCpf(cpf_usuario)){
-            this.cadastroClienteProvider.postCadastroCliente('/clients', this.dadosCadastro)
+            this.cadastroClienteProvider.postCadastroCliente('/clientes', this.dadosCadastro)
     .then(dadosCadastro => {
       
       //console.log(dadosLogin); // data received by server 

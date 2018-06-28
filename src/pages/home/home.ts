@@ -24,7 +24,7 @@ export class HomePage {
   }
 
   inicializaLista() {
-    this.produtosProvider.getProdutos('/users').then(data => {
+    this.produtosProvider.getProdutos('/produtos').then(data => {
       this.lista = JSON.parse(data['_body']);
       if (this.lista[0]!= null) {
         this.initializeItems();
@@ -54,7 +54,7 @@ export class HomePage {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.items = this.items.filter((item) => {
-        return (item.cpf.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }

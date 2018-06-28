@@ -1,4 +1,5 @@
 <ion-header>
+    <br>
     <ion-searchbar placeholder="Buscar Produtos" (ionInput)="getItens($event)">
         [(ngModel)]="myInput"
         [showCancelButton]="shouldShowCancel"
@@ -8,14 +9,13 @@
   </ion-header>
   
   <ion-content padding>  
-    <ion-list *ngFor="let user of items">    
-        <ion-item (click)="itemClicked(user)">
+    <ion-list *ngFor="let produto of items">    
+        <ion-item (click)="itemClicked(produto)">
           <ion-avatar item-start>
             <img src="assets/imgs/achai_logo.png">
           </ion-avatar>
-          <p>Produto: {{user.cpf}}</p>
-          <p>Nome: {{user.name}}</p>
-          <p>E-mail: {{user.email}}</p>        
+          <p>Produto: {{produto.nome}}</p>
+          <p>Marca: {{produto.marca}}</p>          
         </ion-item>         
     </ion-list>
    
