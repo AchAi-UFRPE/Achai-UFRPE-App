@@ -3,6 +3,9 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { ProdutosProvider } from '../../providers/services/produtosService';
 import { CarrinhoPage } from '../carrinho/carrinho';
 import { PerfilDoUsuarioPage } from '../perfil-do-usuario/perfil-do-usuario';
+import { ActionSheetController } from 'ionic-angular'
+import { HomePageModule } from './home.module';
+import { ListaDeComprasPage } from '../lista-de-compras/lista-de-compras';
 
 
 @Component({
@@ -13,12 +16,14 @@ export class HomePage {
 
   DadosLogin = {};  
   items: any;
-  lista: any;
+  lista: any;  
+  listaDeCompras = [];
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public produtosProvider: ProdutosProvider,
-    public alertCtrl: AlertController) {
+    public alertCtrl: AlertController,
+    public actionSheetCtrl: ActionSheetController) {
       this.inicializaLista()
       this.DadosLogin = this.navParams.get("DadosLogin")      
   }
@@ -36,13 +41,17 @@ export class HomePage {
     this.items = this.lista;
   }
 
-  itemClicked(){
+  itemClicked(produto){
     const alert = this.alertCtrl.create({
-      title: 'Deseja adicionar o item ao carrinho?',            
-      buttons: [{text:'Sim'},'Não']
+      title: 'Deseja adicionar o item a lista de compras?',            
+      buttons: [{text:'Sim', handler: data => {                        
+        this.listaDeCompras.push(produto);
+        console.log(this.listaDeCompras);
+      }},'Não']
     });
     alert.present();
   }
+ 
 
   getItens(ev: any) {
     // Reset items back to all of the items
@@ -65,6 +74,10 @@ export class HomePage {
 
   goToPerfil(){
     this.navCtrl.push(PerfilDoUsuarioPage);
+  }
+
+  goToListaDeCompras(){    
+    this.navCtrl.push(ListaDeComprasPage, {listaCompras: this.listaDeCompras});
   }
 
 }

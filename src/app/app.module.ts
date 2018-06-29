@@ -21,6 +21,7 @@ import { CadastroEntregadorProvider } from '../providers/services/cadastroEntreg
 import { ProdutosProvider } from '../providers/services/produtosService';
 import { CarrinhoPage } from '../pages/carrinho/carrinho';
 import { PerfilDoUsuarioPage } from '../pages/perfil-do-usuario/perfil-do-usuario';
+import { ListaDeComprasPage } from '../pages/lista-de-compras/lista-de-compras';
 @NgModule({
   declarations: [
     MyApp,
@@ -30,7 +31,8 @@ import { PerfilDoUsuarioPage } from '../pages/perfil-do-usuario/perfil-do-usuari
     CadastroClientePage,
     CadastroEntregadorPage,
     CarrinhoPage,
-    PerfilDoUsuarioPage
+    PerfilDoUsuarioPage,
+    ListaDeComprasPage
     
   ],
   imports: [
@@ -47,7 +49,8 @@ import { PerfilDoUsuarioPage } from '../pages/perfil-do-usuario/perfil-do-usuari
     CadastroClientePage,
     CadastroEntregadorPage,
     CarrinhoPage,
-    PerfilDoUsuarioPage
+    PerfilDoUsuarioPage,
+    ListaDeComprasPage
   ],
   providers: [
     StatusBar,
