@@ -12,7 +12,7 @@
     <ion-list *ngFor="let produto of items">    
         <ion-item (click)="itemClicked(produto)">
           <ion-avatar item-start>
-            <img src="assets/imgs/achai_logo.png">
+            <td><img src="assets/imgs/img_produtos/{{produto.id}}.png"/></td>
           </ion-avatar>
           <p>Produto: {{produto.nome}}</p>
           <p>Marca: {{produto.marca}}</p>          
