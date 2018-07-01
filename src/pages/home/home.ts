@@ -18,6 +18,7 @@ export class HomePage {
   items: any;
   lista: any;  
   listaDeCompras = [];
+  listaCarrinho = [];
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -41,15 +42,33 @@ export class HomePage {
     this.items = this.lista;
   }
 
-  itemClicked(produto){
-    const alert = this.alertCtrl.create({
-      title: 'Deseja adicionar o item a lista de compras?',            
-      buttons: [{text:'Sim', handler: data => {                        
-        this.listaDeCompras.push(produto);
-        console.log(this.listaDeCompras);
-      }},'Não']
+  itemClicked(produto) {
+    let actionSheet = this.actionSheetCtrl.create({      
+      buttons: [
+        {
+          text: 'Adicionar ao Carrinho',
+          handler: () => {
+            this.listaCarrinho.push(produto);
+            console.log(this.listaCarrinho);
+          }          
+        },
+        {
+          text: 'Adicionar a Lista de Compras',          
+          handler: () => {                        
+            this.listaDeCompras.push(produto);
+            console.log(this.listaDeCompras);
+          }
+        },
+        {
+          text: 'Cancel',          
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
     });
-    alert.present();
+ 
+    actionSheet.present();
   }
  
 
