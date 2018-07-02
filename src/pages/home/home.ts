@@ -88,7 +88,7 @@ export class HomePage {
   }
 
   goToCarrinho(){
-    this.navCtrl.push(CarrinhoPage);
+    this.navCtrl.push(CarrinhoPage, {listaCarrinho: this.listaCarrinho});
   }
 
   goToPerfil(){

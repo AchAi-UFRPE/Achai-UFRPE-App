@@ -1,5 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Carrinho</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
 <ion-content padding>
-  <div class="content">
-    
-  </div>
+    <ion-list *ngFor="let produto of listaCarrinho">            
+        <ion-item (click)="itemClicked(produto)">
+            <ion-avatar item-start>
+              <td><img src="assets/imgs/img_produtos/{{produto.id}}.png"/></td>
+            </ion-avatar>
+            <p>Produto: {{produto.nome}}</p>
+            <p>Marca: {{produto.marca}}</p>          
+          </ion-item>         
+      </ion-list>
+
 </ion-content>
