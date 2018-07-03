@@ -17,10 +17,6 @@ import { ActionSheetController } from 'ionic-angular'
 export class CarrinhoPage {
 
   listaCarrinho = [];
-  public qntProduto = {
-    idProduto: null,
-    qntProdutos: null,
-  }
   
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public actionSheetCtrl: ActionSheetController) {
@@ -58,8 +54,7 @@ export class CarrinhoPage {
   }
 
   show(){
-    console.log(this.listaCarrinho)
-    console.log(this.qntProduto)
+    console.log(this.listaCarrinho)    
   }
 
 

@@ -14,7 +14,7 @@ import { ListaDeComprasPage } from '../lista-de-compras/lista-de-compras';
 })
 export class HomePage {
 
-  DadosLogin = {};  
+  DadosLogin = JSON['_body'];  
   items: any;
   lista: any;  
   listaDeCompras = [];
@@ -48,7 +48,7 @@ export class HomePage {
         {
           text: 'Adicionar ao Carrinho',
           handler: () => {            
-            this.teste(produto);                       
+            this.addItemCarrinho(produto);                       
           }          
         },
         {
@@ -98,7 +98,7 @@ export class HomePage {
     this.navCtrl.push(ListaDeComprasPage, {listaCompras: this.listaDeCompras});
   }
 
-  teste(produto){
+  addItemCarrinho(produto){
     const prompt = this.alertCtrl.create({      
       title: "Quantos produtos deseja?",
       inputs: [
@@ -118,7 +118,9 @@ export class HomePage {
           text: 'Ok',
           handler: data => {
             if(data.Quantidade > 0){              
-              produto.quantidade = data.Quantidade;
+              produto.quantidade = data.Quantidade; 
+              var dadosUsuario = JSON.parse(this.DadosLogin);
+              produto.usuarioId = dadosUsuario.dados.id;
               this.listaCarrinho.push(produto);
             }
           }
