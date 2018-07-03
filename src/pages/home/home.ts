@@ -48,7 +48,8 @@ export class HomePage {
         {
           text: 'Adicionar ao Carrinho',
           handler: () => {
-            this.listaCarrinho.push(produto);
+            this.listaCarrinho.push(produto);             
+            this.teste();           
             console.log(this.listaCarrinho);
           }          
         },
@@ -99,6 +100,35 @@ export class HomePage {
     this.navCtrl.push(ListaDeComprasPage, {listaCompras: this.listaDeCompras});
   }
 
+  teste(){
+    const prompt = this.alertCtrl.create({      
+      title: "Quantos produtos deseja?",
+      inputs: [
+        {
+          name: 'Quantidade',
+          placeholder: 'Quantidade'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Ok',
+          handler: data => {
+            var teste = this.listaCarrinho.pop();
+            teste.quantidade = data.Quantidade;
+            this.listaCarrinho.push(teste);
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+  
 }
 
 

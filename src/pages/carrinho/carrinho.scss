@@ -1,3 +1,22 @@
 page-carrinho {
 
+    #input{
+        position: absolute;
+        left: 338px;
+    }
+
+    #qntProduto{
+        position: absolute;
+        left: 256px;
+    }
+
+    .btn{
+        position: relative;        
+        margin-right: auto;
+        margin-left: auto;
+        font-weight: bold;
+        font-size: 0.9em;
+        margin-top: 20% !important;
+    }
+
 }

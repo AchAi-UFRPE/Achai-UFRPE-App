@@ -14,8 +14,17 @@
               <td><img src="assets/imgs/img_produtos/{{produto.id}}.png"/></td>
             </ion-avatar>
             <p>Produto: {{produto.nome}}</p>
-            <p>Marca: {{produto.marca}}</p>          
-          </ion-item>         
+            <p>Marca: {{produto.marca}}</p>             
+            <p>Quantidade: {{produto.quantidade}}</p>            
+          </ion-item>          
       </ion-list>
 
+      <div class='btn'>
+        <button (click)="show()" type="button" ion-button block outline>
+          Efetuar Pagamento
+        </button>
+      </div>
+
 </ion-content>
+
+
