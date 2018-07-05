@@ -4,9 +4,9 @@ import { TipocadastroPage } from '../tipocadastro/tipocadastro';
 import { Http } from '@angular/http';
 import { LoginProvider } from '../../providers/services/loginService';
 import { HomePage } from '../home/home';
-import {AlertController} from 'ionic-angular';
-import{LoadingController} from 'ionic-angular';
-
+import { AlertController} from 'ionic-angular';
+import { LoadingController} from 'ionic-angular';
+import { TelaInicialClientePage } from '../tela-inicial-cliente/tela-inicial-cliente';
 
 @IonicPage()
 @Component({
@@ -43,7 +43,7 @@ export class LoginPage {
       
       //console.log(dadosLogin); // data received by server 
       if (dadosLogin['_status'] != 'erro'){        
-        this.navCtrl.push(HomePage,{DadosLogin: dadosLogin['_body']});
+        this.navCtrl.push(TelaInicialClientePage,{DadosLogin: dadosLogin['_body']});
       }else{        
         this.showAlertFailedLogin();
       }

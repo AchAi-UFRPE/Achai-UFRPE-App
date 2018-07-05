@@ -127,35 +127,38 @@ export class CadastroEntregadorPage {
     });
     alert.present();
   }
-  nomeInvalido() {
+  public voltar():void{
+    this.navCtrl.pop();
+  }
+  public nomeInvalido() {
     const alert = this.alertCtrl.create({
       subTitle: 'Nome muito curto',
       buttons: ['OK']
     });
     alert.present();
   }
-  emailInvalido() {
+  public emailInvalido() {
     const alert = this.alertCtrl.create({
       subTitle: 'Email inválido',
       buttons: ['OK']
     });
     alert.present();
   }
-  senhaInvalida() {
+  public senhaInvalida() {
     const alert = this.alertCtrl.create({
       subTitle: 'Senha com menos de 5 caracteres',
       buttons: ['OK']
     });
     alert.present();
   }
-  cpfInvalido() {
+  public cpfInvalido() {
     const alert = this.alertCtrl.create({
       subTitle: 'CPF inválido',
       buttons: ['OK']
     });
     alert.present();
   }
-  cnhInvalida(){
+  public cnhInvalida(){
     const alert = this.alertCtrl.create({
       subTitle: 'CNH inválida',
       buttons: ['OK']

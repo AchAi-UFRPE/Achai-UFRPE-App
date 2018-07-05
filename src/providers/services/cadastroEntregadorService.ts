@@ -12,7 +12,9 @@ import 'rxjs/add/operator/do';
 @Injectable()
 export class CadastroEntregadorProvider {
 
-  UrlServer:any = 'http://localhost:3000';
+  //UrlServer:any = 'http://localhost:3000';
+
+  UrlServer:any = 'http://achai.herokuapp.com'
 
   constructor(public http: Http) {
     console.log('Hello LoginProvider Provider');

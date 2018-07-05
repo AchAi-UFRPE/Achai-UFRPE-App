@@ -12,6 +12,7 @@ import { LoginPage} from '../pages/login/login';
 import { TipocadastroPage } from '../pages/tipocadastro/tipocadastro'
 import { CadastroClientePage } from '../pages/cadastro-cliente/cadastro-cliente';
 import { CadastroEntregadorPage } from '../pages/cadastro-entregador/cadastro-entregador';
+import { TelaInicialClientePage } from '../pages/tela-inicial-cliente/tela-inicial-cliente';
 
 //PROVIDERS
 import { LoginProvider } from '../providers/services/loginService';
@@ -32,7 +33,8 @@ import { ListaDeComprasPage } from '../pages/lista-de-compras/lista-de-compras';
     CadastroEntregadorPage,
     CarrinhoPage,
     PerfilDoUsuarioPage,
-    ListaDeComprasPage
+    ListaDeComprasPage,
+    TelaInicialClientePage
     
   ],
   imports: [
@@ -50,7 +52,8 @@ import { ListaDeComprasPage } from '../pages/lista-de-compras/lista-de-compras';
     CadastroEntregadorPage,
     CarrinhoPage,
     PerfilDoUsuarioPage,
-    ListaDeComprasPage
+    ListaDeComprasPage,
+    TelaInicialClientePage
   ],
   providers: [
     StatusBar,
