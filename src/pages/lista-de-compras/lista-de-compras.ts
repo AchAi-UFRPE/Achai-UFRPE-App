@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ActionSheetController } from 'ionic-angular'
+import { ProdutosProvider } from '../../providers/services/produtosService';
 
 /**
  * Generated class for the ListaDeComprasPage page.
@@ -17,16 +18,28 @@ import { ActionSheetController } from 'ionic-angular'
 export class ListaDeComprasPage {
 
   listaCompras = [];
+  minhaLista: any;
   
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
-    public actionSheetCtrl: ActionSheetController) {
-    this.listaCompras = this.navParams.get("listaCompras");
-    console.log(this.listaCompras);
+    public actionSheetCtrl: ActionSheetController,
+    public produtosProvider: ProdutosProvider) {
+    this.listaCompras = this.navParams.get("listaCompras"); 
+    this.inicializaLista();   
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListaDeComprasPage');
+  }
+
+  inicializaLista() {
+    var login = JSON.parse(localStorage.getItem('dadosLocalLogin'))    
+    console.log(login.dados.id);
+    var id = parseInt(login.dados.id);
+    this.produtosProvider.getListas('/listaDeCompra/'+id).then(data => {
+      this.minhaLista = JSON.parse(data['_body']);
+      console.log(this.minhaLista);
+    });
   }
 
   itemClicked(produto){

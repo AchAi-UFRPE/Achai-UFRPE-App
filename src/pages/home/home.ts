@@ -6,6 +6,7 @@ import { PerfilDoUsuarioPage } from '../perfil-do-usuario/perfil-do-usuario';
 import { ActionSheetController } from 'ionic-angular'
 import { HomePageModule } from './home.module';
 import { ListaDeComprasPage } from '../lista-de-compras/lista-de-compras';
+import { TelaInicialClientePage } from '../tela-inicial-cliente/tela-inicial-cliente';
 
 
 @Component({
@@ -91,7 +92,7 @@ export class HomePage {
   }
 
   goToPerfil(){
-    this.navCtrl.push(PerfilDoUsuarioPage);
+    this.navCtrl.push(TelaInicialClientePage);
   }
 
   goToListaDeCompras(){    
@@ -118,9 +119,7 @@ export class HomePage {
           text: 'Ok',
           handler: data => {
             if(data.Quantidade > 0){              
-              produto.quantidade = data.Quantidade; 
-              var dadosUsuario = JSON.parse(this.DadosLogin);
-              produto.usuarioId = dadosUsuario.dados.id;
+              produto.quantidade = parseInt(data.Quantidade);               
               this.listaCarrinho.push(produto);
             }
           }

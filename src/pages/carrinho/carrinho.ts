@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ActionSheetController } from 'ionic-angular'
+import { ProdutosProvider } from '../../providers/services/produtosService';
 
 /**
  * Generated class for the CarrinhoPage page.
@@ -17,9 +18,16 @@ import { ActionSheetController } from 'ionic-angular'
 export class CarrinhoPage {
 
   listaCarrinho = [];
+  public carrinhoJson = {
+    dados: null,
+    nome: null,
+    id_Usuario: null 
+  }
   
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public actionSheetCtrl: ActionSheetController) {
+    public actionSheetCtrl: ActionSheetController,
+    public alertCtrl: AlertController,
+    public produtosProvider: ProdutosProvider) {
     this.listaCarrinho = this.navParams.get("listaCarrinho");
     console.log(this.listaCarrinho);
   }
@@ -54,8 +62,62 @@ export class CarrinhoPage {
   }
 
   show(){
-    console.log(this.listaCarrinho)    
+    const confirm = this.alertCtrl.create({
+      title: 'Deseja salvar uma lista de compras?',      
+      buttons: [
+        {
+          text: 'Não',
+          handler: data => {
+            data = {};
+            data.lista = this.listaCarrinho;
+            data.id_usuario = 1;
+            console.log(data);
+          }
+        },
+        {
+          text: 'Sim',
+          handler: () => {
+            this.show2();
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
-
+  show2(){
+    const prompt = this.alertCtrl.create({      
+      title: "Digite o nome da lista",
+      inputs: [
+        {
+          name: 'nomeLista',
+          placeholder: 'Nome'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Ok',
+          handler: data => {
+            data.lista = this.listaCarrinho;
+            data.id_usuario = 1;
+            console.log(data);
+            this.produtosProvider.postLista("/listaDeCompra", data)
+            }
+          }
+        
+      ]
+    });
+    prompt.present();
+  } 
+  
+  
 }
+
+
+

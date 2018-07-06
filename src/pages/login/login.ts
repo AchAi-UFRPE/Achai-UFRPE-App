@@ -43,7 +43,9 @@ export class LoginPage {
       
       //console.log(dadosLogin); // data received by server 
       if (dadosLogin['_status'] != 'erro'){        
-        this.navCtrl.push(TelaInicialClientePage,{DadosLogin: dadosLogin['_body']});
+        this.navCtrl.push(HomePage,{DadosLogin: dadosLogin['_body']});
+        let data = dadosLogin['_body'];
+        localStorage.setItem('dadosLocalLogin', data);
       }else{        
         this.showAlertFailedLogin();
       }

@@ -33,4 +33,29 @@ export class ProdutosProvider {
     });
   }
 
+  postLista(UrlApi, data){
+    UrlApi= this.UrlServer+UrlApi;
+    return new Promise((resolve, reject) => {
+
+      this.http.post(UrlApi, data).subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+
+  }
+
+  getListas(UrlApi) {
+    UrlApi= this.UrlServer+UrlApi;
+    return new Promise((resolve, reject) => {
+
+      this.http.get(UrlApi).subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
 }

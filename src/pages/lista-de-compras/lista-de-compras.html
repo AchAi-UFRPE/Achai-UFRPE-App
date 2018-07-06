@@ -1,11 +1,15 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Minhas Listas</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
 <ion-content padding>
-    <ion-list *ngFor="let produto of listaCompras">            
-        <ion-item (click)="itemClicked(produto)">
-            <ion-avatar item-start>
-              <td><img src="assets/imgs/img_produtos/{{produto.id}}.png"/></td>
-            </ion-avatar>
-            <p>Produto: {{produto.nome}}</p>
-            <p>Marca: {{produto.marca}}</p>          
+    <ion-list *ngFor="let lista of minhaLista">            
+        <ion-item (click)="itemClicked(produto)">            
+            <p>Lista: {{lista.nome}}</p>                
           </ion-item>         
       </ion-list>
 </ion-content>
