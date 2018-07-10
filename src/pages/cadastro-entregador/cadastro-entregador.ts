@@ -76,7 +76,7 @@ export class CadastroEntregadorPage {
   }
   private confirmacaoCnh(cnh_entregador):any{
     if (cnh_entregador != null){
-      if (cnh_entregador.toString().length > 11){
+      if (cnh_entregador.toString().length = 11){
         return true;
       }else{
         this.cnhInvalida();
@@ -160,7 +160,7 @@ export class CadastroEntregadorPage {
   }
   public cnhInvalida(){
     const alert = this.alertCtrl.create({
-      subTitle: 'CNH inválida',
+      subTitle: 'CNH deve conter 11 dígitos',
       buttons: ['OK']
     });
     alert.present();

@@ -13,6 +13,10 @@ import { TipocadastroPage } from '../pages/tipocadastro/tipocadastro'
 import { CadastroClientePage } from '../pages/cadastro-cliente/cadastro-cliente';
 import { CadastroEntregadorPage } from '../pages/cadastro-entregador/cadastro-entregador';
 import { TelaInicialClientePage } from '../pages/tela-inicial-cliente/tela-inicial-cliente';
+import { CarrinhoPage } from '../pages/carrinho/carrinho';
+import { PerfilDoUsuarioPage } from '../pages/perfil-do-usuario/perfil-do-usuario';
+import { ListaDeComprasPage } from '../pages/lista-de-compras/lista-de-compras';
+import { CartaoPage } from '../pages/cartao/cartao';
 
 //PROVIDERS
 import { LoginProvider } from '../providers/services/loginService';
@@ -20,9 +24,7 @@ import { HttpModule } from '@angular/http';
 import { CadastroClienteProvider } from '../providers/services/cadastroClienteService';
 import { CadastroEntregadorProvider } from '../providers/services/cadastroEntregadorService';
 import { ProdutosProvider } from '../providers/services/produtosService';
-import { CarrinhoPage } from '../pages/carrinho/carrinho';
-import { PerfilDoUsuarioPage } from '../pages/perfil-do-usuario/perfil-do-usuario';
-import { ListaDeComprasPage } from '../pages/lista-de-compras/lista-de-compras';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -34,7 +36,8 @@ import { ListaDeComprasPage } from '../pages/lista-de-compras/lista-de-compras';
     CarrinhoPage,
     PerfilDoUsuarioPage,
     ListaDeComprasPage,
-    TelaInicialClientePage
+    TelaInicialClientePage,
+    CartaoPage
     
   ],
   imports: [
@@ -53,7 +56,8 @@ import { ListaDeComprasPage } from '../pages/lista-de-compras/lista-de-compras';
     CarrinhoPage,
     PerfilDoUsuarioPage,
     ListaDeComprasPage,
-    TelaInicialClientePage
+    TelaInicialClientePage, 
+    CartaoPage
   ],
   providers: [
     StatusBar,

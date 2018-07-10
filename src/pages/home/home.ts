@@ -7,6 +7,7 @@ import { ActionSheetController } from 'ionic-angular'
 import { HomePageModule } from './home.module';
 import { ListaDeComprasPage } from '../lista-de-compras/lista-de-compras';
 import { TelaInicialClientePage } from '../tela-inicial-cliente/tela-inicial-cliente';
+import { CartaoPage } from '../cartao/cartao';
 
 
 @Component({
@@ -85,6 +86,9 @@ export class HomePage {
         return (item.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+  goToCartao(){
+    this.navCtrl.push(CartaoPage);
   }
 
   goToCarrinho(){
