@@ -65,7 +65,7 @@ export class CadastroEntregadorPage {
 
   private confirmacaoCpf(cpf_entregador):any{
     if (cpf_entregador != null){
-      if (cpf_entregador.toString().length > 11){
+      if (cpf_entregador.toString().length == 11){
         return true;
       }else{
         this.cpfInvalido();
