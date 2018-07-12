@@ -1,18 +1,32 @@
-<!--
-  Generated template for the HomeEntregadorPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>home-entregador</ion-title>
-  </ion-navbar>
-
+  <br>
+  <div class="text">
+    <h2>Solicitações Disponíveis</h2>
+  </div>
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content padding>  
+  <ion-list *ngFor="let entrega of pedidos">    
+      <ion-item (click)="itemClicked(entrega)">
+        <ion-avatar item-start>
+          <td><img src="assets/imgs/img_produtos/{{produto.id}}.png"/></td>
+        </ion-avatar>
+        <h3>{{cliente.nome}}</h3>
+        <p>Entrega: {{produto.marca}}</p>          
+        <p>Valor das Compras: {{produto.marca}}</p> 
+        <p>Valor da Entrega: {{produto.marca}}</p> 
+      </ion-item>      
+  </ion-list>
+ 
+  <ion-fab right bottom>
+    <button ion-fab mini="light"><ion-icon name="menu"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab (click)="goToPerfil()"><ion-icon name="person"></ion-icon></button>  
+    </ion-fab-list>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="goToCarrinho()"><ion-icon name="md-cart"></ion-icon></button>
+      <button ion-fab (click)="goToListaDeCompras()"><ion-icon name="ios-list-box"></ion-icon></button>  
+      <button ion-fab (click)="goToCartao()"><ion-icon name="card"></ion-icon></button>         
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TelaInicialEntregadorPage } from '../tela-inicial-entregador/tela-inicial-entregador';
 
 /**
  * Generated class for the HomeEntregadorPage page.
@@ -21,5 +22,11 @@ export class HomeEntregadorPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomeEntregadorPage');
   }
+
+  goToPerfil(){
+    this.navCtrl.push(TelaInicialEntregadorPage);
+  }
+
+  
 
 }

@@ -76,7 +76,7 @@ export class CadastroEntregadorPage {
   }
   private confirmacaoCnh(cnh_entregador):any{
     if (cnh_entregador != null){
-      if (cnh_entregador.toString().length = 11){
+      if (cnh_entregador.toString().length == 11){
         return true;
       }else{
         this.cnhInvalida();
@@ -99,7 +99,7 @@ export class CadastroEntregadorPage {
           if(this.confirmacaoEmail(email_entregador)){
             if(this.confirmacaoCpf(cpf_entregador)){
               if(this.confirmacaoCnh(cnh_entregador)){
-                this.CadastroEntregadorProvider.postCadastroEntregador('/workers', this.dadosCadastroEntregador)
+                this.CadastroEntregadorProvider.postCadastroEntregador('/entregadores', this.dadosCadastroEntregador)
     .then(dadosCadastro => {  
       
       //console.log(dadosLogin); // data received by server 

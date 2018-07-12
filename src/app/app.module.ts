@@ -24,19 +24,25 @@ import { HttpModule } from '@angular/http';
 import { CadastroClienteProvider } from '../providers/services/cadastroClienteService';
 import { CadastroEntregadorProvider } from '../providers/services/cadastroEntregadorService';
 import { ProdutosProvider } from '../providers/services/produtosService';
+import { TelaInicialEntregadorPage } from '../pages/tela-inicial-entregador/tela-inicial-entregador';
+import { PerfilDoEntregadorPage } from '../pages/perfil-do-entregador/perfil-do-entregador';
+import { HomeEntregadorPage } from '../pages/home-entregador/home-entregador';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    HomeEntregadorPage,
     LoginPage,
     TipocadastroPage,
     CadastroClientePage,
     CadastroEntregadorPage,
     CarrinhoPage,
     PerfilDoUsuarioPage,
+    PerfilDoEntregadorPage,
     ListaDeComprasPage,
     TelaInicialClientePage,
+    TelaInicialEntregadorPage,
     CartaoPage
     
   ],
@@ -49,14 +55,17 @@ import { ProdutosProvider } from '../providers/services/produtosService';
   entryComponents: [
     MyApp,
     HomePage,
+    HomeEntregadorPage,
     LoginPage,
     TipocadastroPage,
     CadastroClientePage,
     CadastroEntregadorPage,
     CarrinhoPage,
     PerfilDoUsuarioPage,
+    PerfilDoEntregadorPage,
     ListaDeComprasPage,
-    TelaInicialClientePage, 
+    TelaInicialClientePage,
+    TelaInicialEntregadorPage,
     CartaoPage
   ],
   providers: [
