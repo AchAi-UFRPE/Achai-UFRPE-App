@@ -27,6 +27,7 @@ import { ProdutosProvider } from '../providers/services/produtosService';
 import { TelaInicialEntregadorPage } from '../pages/tela-inicial-entregador/tela-inicial-entregador';
 import { PerfilDoEntregadorPage } from '../pages/perfil-do-entregador/perfil-do-entregador';
 import { HomeEntregadorPage } from '../pages/home-entregador/home-entregador';
+import { MinhasEntregasPage } from '../pages/minhas-entregas/minhas-entregas';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { HomeEntregadorPage } from '../pages/home-entregador/home-entregador';
     ListaDeComprasPage,
     TelaInicialClientePage,
     TelaInicialEntregadorPage,
+    MinhasEntregasPage,
     CartaoPage
     
   ],
@@ -66,6 +68,7 @@ import { HomeEntregadorPage } from '../pages/home-entregador/home-entregador';
     ListaDeComprasPage,
     TelaInicialClientePage,
     TelaInicialEntregadorPage,
+    MinhasEntregasPage,
     CartaoPage
   ],
   providers: [

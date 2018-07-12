@@ -6,7 +6,7 @@
 </ion-header>
 
 <ion-content padding>  
-  <ion-list *ngFor="let entrega of pedidos">    
+  <ion-list *ngFor="let lista of minhaLista">    
       <ion-item (click)="itemClicked(entrega)">
         <ion-avatar item-start>
           <td><img src="assets/imgs/img_produtos/{{produto.id}}.png"/></td>
@@ -24,9 +24,8 @@
       <button ion-fab (click)="goToPerfil()"><ion-icon name="person"></ion-icon></button>  
     </ion-fab-list>
     <ion-fab-list side="top">
-      <button ion-fab (click)="goToCarrinho()"><ion-icon name="md-cart"></ion-icon></button>
-      <button ion-fab (click)="goToListaDeCompras()"><ion-icon name="ios-list-box"></ion-icon></button>  
-      <button ion-fab (click)="goToCartao()"><ion-icon name="card"></ion-icon></button>         
+      <button ion-fab (click)="goToMinhasEntregas()"><ion-icon name="md-cart"></ion-icon></button>  
+               
     </ion-fab-list>
   </ion-fab>
 </ion-content>

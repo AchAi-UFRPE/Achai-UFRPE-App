@@ -7,6 +7,7 @@ import { HomePage } from '../home/home';
 import { AlertController} from 'ionic-angular';
 import { LoadingController} from 'ionic-angular';
 import { TelaInicialClientePage } from '../tela-inicial-cliente/tela-inicial-cliente';
+import { HomeEntregadorPage } from '../home-entregador/home-entregador';
 
 @IonicPage()
 @Component({
@@ -37,13 +38,14 @@ export class LoginPage {
   }
 
   entrar():void{
-    
+    //this.navCtrl.push(HomeEntregadorPage); //Gambis detected!
     this.LoginProvider.postLogin('/login', this.loginDados)
     .then(dadosLogin => {
       
-      //console.log(dadosLogin); // data received by server 
-      if (dadosLogin['_status'] != 'erro'){        
-        this.navCtrl.push(HomePage,{DadosLogin: dadosLogin['_body']});
+      console.log(dadosLogin); // data received by server 
+     
+      if (dadosLogin['_status'] != 'erro' && dadosLogin['_body']['_entregador'] != null){        
+        this.navCtrl.push(HomeEntregadorPage,{DadosLogin: dadosLogin['_body']});
         let data = dadosLogin['_body'];
         localStorage.setItem('dadosLocalLogin', data);
       }else{        
