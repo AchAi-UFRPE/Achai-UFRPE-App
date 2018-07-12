@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the CartaoPage page.
@@ -21,5 +22,10 @@ export class CartaoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartaoPage');
   }
-
+  public voltar():void{
+    this.navCtrl.pop();
+  }
+  public irLogin():void{
+    this.navCtrl.push(HomePage);
+  }
 }

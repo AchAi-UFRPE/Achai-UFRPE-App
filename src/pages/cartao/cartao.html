@@ -1,10 +1,45 @@
 <ion-content padding>
 <div class="content">
+  <div class="back">
+      <img (click)="voltar()" src="assets/imgs/botao_voltar.png">
+  </div>
   <div class="texto">
     Adicionar cartão
   </div>
   <div class="texto2">
-    Digite as informaçãoes do cartão de crédito que você deseja usar para pagamento:
+    Digite as informações do cartão de crédito que você deseja usar para pagamento:
+  </div>
+  <div class="input">
+    <div class="input1">
+      <ion-item>
+        <ion-input id="numero_cartao" type="text" placeholder="Número"></ion-input>
+      </ion-item>
+    </div>
+    <div class="row">
+        <div class="input2">
+        <ion-item>
+          <ion-input id="validade" type="text" placeholder="Validade" ></ion-input>
+        </ion-item>
+      </div>
+      <div class="input3">
+        <ion-item>
+          <ion-input id="codigo" type="text" placeholder="CVC"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+    <div class="input4">
+      <ion-item>
+        <ion-input id="nome_titular" type="text" placeholder="Nome do titular do cartão"></ion-input>
+      </ion-item>
+    </div>
+    <div class="input5">
+        <ion-item>
+          <ion-input id="cpf_titular" type="text" placeholder="CPF titular do cartão"></ion-input>
+        </ion-item>
+      </div>
+  </div>
+  <div class="btn">
+    <button id="btn_confirmar" (click)="irLogin()" ion-button full round>Confirmar</button>
   </div>
 </div>
 </ion-content>
