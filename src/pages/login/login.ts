@@ -41,7 +41,7 @@ export class LoginPage {
     this.LoginProvider.postLogin('/login', this.loginDados)
     .then(dadosLogin => {
       
-      //console.log(dadosLogin); // data received by server 
+      console.log(dadosLogin); // data received by server 
       if (dadosLogin['_status'] != 'erro'){        
         this.navCtrl.push(HomePage,{DadosLogin: dadosLogin['_body']});
         let data = dadosLogin['_body'];
