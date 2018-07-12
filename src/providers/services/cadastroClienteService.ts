@@ -24,7 +24,19 @@ export class CadastroClienteProvider {
     UrlApi= this.UrlServer+UrlApi;
     return new Promise((resolve, reject) => {
 
-      this.http.post(UrlApi, data, undefined).subscribe(res => {
+      this.http.post(UrlApi, data).subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  putEditarCliente(UrlApi, data){
+    UrlApi= this.UrlServer+UrlApi;
+    return new Promise((resolve, reject) => {
+
+      this.http.put(UrlApi, data).subscribe(res => {
           resolve(res);
         }, (err) => {
           reject(err);

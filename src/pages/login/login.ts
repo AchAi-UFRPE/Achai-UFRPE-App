@@ -43,9 +43,14 @@ export class LoginPage {
     .then(dadosLogin => {
       
       console.log(dadosLogin); // data received by server 
+<<<<<<< HEAD
      
       if (dadosLogin['_status'] != 'erro' && dadosLogin['_body']['_entregador'] != null){        
         this.navCtrl.push(HomeEntregadorPage,{DadosLogin: dadosLogin['_body']});
+=======
+      if (dadosLogin['_status'] != 'erro'){        
+        this.navCtrl.push(HomePage,{DadosLogin: dadosLogin['_body']});
+>>>>>>> 62f6ed7e01c4b5cc7eadfdf86a7631f8368eeca7
         let data = dadosLogin['_body'];
         localStorage.setItem('dadosLocalLogin', data);
       }else{        

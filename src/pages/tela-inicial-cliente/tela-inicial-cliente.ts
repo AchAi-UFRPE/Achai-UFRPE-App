@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { ListaDeComprasPage } from '../lista-de-compras/lista-de-compras';
 import { HomePage } from '../home/home';
+import { PerfilDoUsuarioPage } from '../perfil-do-usuario/perfil-do-usuario';
 
 
 @IonicPage()
@@ -30,4 +31,9 @@ export class TelaInicialClientePage {
   public irPesquisa():void{
     this.navCtrl.push(HomePage);
   }
+
+  public irPerfil(){
+    this.navCtrl.push(PerfilDoUsuarioPage);
+  }
+
 }
