@@ -104,8 +104,10 @@ export class CarrinhoPage {
         {
           text: 'Ok',
           handler: data => {
+            var login = JSON.parse(localStorage.getItem('dadosLocalLogin'));    
             data.lista = this.listaCarrinho;
-            data.id_usuario = 1;
+            var id = parseInt(login.dados.cliente.id);            
+            data.id_usuario = id;
             console.log(data);
             this.produtosProvider.postLista("/listaDeCompra", data)
             }

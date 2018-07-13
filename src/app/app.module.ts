@@ -28,6 +28,7 @@ import { TelaInicialEntregadorPage } from '../pages/tela-inicial-entregador/tela
 import { PerfilDoEntregadorPage } from '../pages/perfil-do-entregador/perfil-do-entregador';
 import { HomeEntregadorPage } from '../pages/home-entregador/home-entregador';
 import { MinhasEntregasPage } from '../pages/minhas-entregas/minhas-entregas';
+import { ListaDeComprasProdutosPage } from '../pages/lista-de-compras-produtos/lista-de-compras-produtos';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MinhasEntregasPage } from '../pages/minhas-entregas/minhas-entregas';
     TelaInicialClientePage,
     TelaInicialEntregadorPage,
     MinhasEntregasPage,
-    CartaoPage
+    CartaoPage,
+    ListaDeComprasProdutosPage
     
   ],
   imports: [
@@ -69,7 +71,8 @@ import { MinhasEntregasPage } from '../pages/minhas-entregas/minhas-entregas';
     TelaInicialClientePage,
     TelaInicialEntregadorPage,
     MinhasEntregasPage,
-    CartaoPage
+    CartaoPage,
+    ListaDeComprasProdutosPage
   ],
   providers: [
     StatusBar,
