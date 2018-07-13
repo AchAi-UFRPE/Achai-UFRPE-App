@@ -6,17 +6,17 @@
     <div class="inputs">
       <div class="editNome">
       <ion-item>
-        <ion-input type="text" placeholder="Nome"></ion-input>
+        <ion-input type="text"  placeholder="{{dados.dados.nome}}" [(ngModel)]="edtEntregador.nome"></ion-input>
       </ion-item>
     </div>
     <div class="editEmail">
       <ion-item>
-        <ion-input type="text" placeholder="Email"></ion-input>
+        <ion-input type="text" placeholder="{{dados.dados.email}}" [(ngModel)]="edtEntregador.email" ></ion-input>
       </ion-item>
     </div>
     <div class="editSenha">
       <ion-item>
-        <ion-input type="password" placeholder="Senha"></ion-input>
+        <ion-input type="password" placeholder="Senha" [(ngModel)]="edtEntregador.senha"></ion-input>
       </ion-item>
         
     </div>

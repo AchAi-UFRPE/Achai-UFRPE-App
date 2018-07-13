@@ -23,8 +23,20 @@ export class CadastroEntregadorProvider {
   postCadastroEntregador(UrlApi, data) {
     UrlApi= this.UrlServer+UrlApi;
     return new Promise((resolve, reject) => {
-
       this.http.post(UrlApi, data).subscribe(res => {
+        console.log("foi");
+          resolve(res);
+        }, (err) => {
+          console.log("não foi");
+          reject(err);
+        });
+    });
+  }
+  putEditarEntregador(UrlApi, data){
+    UrlApi= this.UrlServer+UrlApi;
+    return new Promise((resolve, reject) => {
+
+      this.http.put(UrlApi, data).subscribe(res => {
           resolve(res);
         }, (err) => {
           reject(err);
