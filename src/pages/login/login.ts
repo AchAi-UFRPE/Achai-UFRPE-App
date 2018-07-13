@@ -38,13 +38,13 @@ export class LoginPage {
   }
 
   entrar():void{
-    //this.navCtrl.push(HomeEntregadorPage); //Gambis detected!
+    
     this.LoginProvider.postLogin('/login', this.loginDados)
     .then(dadosLogin => {
       
       //console.log(JSON.parse(dadosLogin["_body"])); // data received by server 
       var retorno = JSON.parse(dadosLogin["_body"]);
-      console.log("dados retornados", retorno["dados"]["entregador"]);
+      //console.log("dados retornados", retorno["dados"]["entregador"]);
      
       if (retorno['status'] != 'erro' && retorno["dados"]["entregador"] != null){        //
         this.navCtrl.push(HomeEntregadorPage,{DadosLogin: dadosLogin['_body']});

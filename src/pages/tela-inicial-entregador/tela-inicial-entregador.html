@@ -14,5 +14,26 @@
 
 
 <ion-content padding>
-
+    <div class="content">
+    <div class="back">
+      <img (click)="voltar()" src="assets/imgs/botao_voltar.png">
+    </div>
+    <div class="img">
+      <img src="assets/imgs/avatar_default.png">
+    </div>
+    <div class="text">
+      <h2>Bem-vindo!</h2>
+    </div>
+    <div class="btns">
+        <div class="btn1">
+          <button id="btn_pesquisar_produto" (click)="irPesquisa()"ion-button round full>Pesquisar Entregas</button> 
+        </div>
+        <div class="btn2">
+          <button id="bnt_perfil" (click)="irPerfil()" ion-button round full>Meu perfil</button>
+        </div>
+        <div class="btn3">
+          <button id="bnt_minha_lista" (click)="irLista()" ion-button round full>Minhas Entregas</button>
+        </div>
+    </div>
+  </div>
 </ion-content>
