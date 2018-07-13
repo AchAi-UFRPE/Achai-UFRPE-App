@@ -42,15 +42,17 @@ export class LoginPage {
     this.LoginProvider.postLogin('/login', this.loginDados)
     .then(dadosLogin => {
       
-      console.log(dadosLogin); // data received by server 
-<<<<<<< HEAD
+      //console.log(JSON.parse(dadosLogin["_body"])); // data received by server 
+      var retorno = JSON.parse(dadosLogin["_body"]);
+      console.log("dados retornados", retorno["dados"]["entregador"]);
      
-      if (dadosLogin['_status'] != 'erro' && dadosLogin['_body']['_entregador'] != null){        
+      if (retorno['status'] != 'erro' && retorno["dados"]["entregador"] != null){        //
         this.navCtrl.push(HomeEntregadorPage,{DadosLogin: dadosLogin['_body']});
-=======
-      if (dadosLogin['_status'] != 'erro'){        
+        let data = dadosLogin['_body'];
+        localStorage.setItem('dadosLocalLogin', data);
+      }
+      else if (retorno['status'] != 'erro' && retorno["dados"]["cliente"] != null){        //
         this.navCtrl.push(HomePage,{DadosLogin: dadosLogin['_body']});
->>>>>>> 62f6ed7e01c4b5cc7eadfdf86a7631f8368eeca7
         let data = dadosLogin['_body'];
         localStorage.setItem('dadosLocalLogin', data);
       }else{        
