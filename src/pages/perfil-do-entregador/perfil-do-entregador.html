@@ -1,74 +1,30 @@
-<!--
-  Generated template for the PerfilDoEntregadorPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>perfil-do-entregador</ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content padding *ngFor="let dados of userData"></ion-content>
-  <div class="edtNome">
-    <ion-item>
-      <ion-label color="primary" stacked>Nome</ion-label>
-      <ion-input type="email" placeholder="{{dados.dados.nome}}" [(ngModel)]="edtUsuario.nome"></ion-input>
-    </ion-item>
+<ion-content padding>
+  <div class="content">
+    <div class="texto">
+      Perfil
+    </div>
+    <div class="inputs">
+      <div class="editNome">
+      <ion-item>
+        <ion-input type="text"  placeholder="{{dados.dados.nome}}" [(ngModel)]="edtEntregador.nome"></ion-input>
+      </ion-item>
+    </div>
+    <div class="editEmail">
+      <ion-item>
+        <ion-input type="text" placeholder="{{dados.dados.email}}" [(ngModel)]="edtEntregador.email" ></ion-input>
+      </ion-item>
+    </div>
+    <div class="editSenha">
+      <ion-item>
+        <ion-input type="password" placeholder="Senha" [(ngModel)]="edtEntregador.senha"></ion-input>
+      </ion-item>
+        
+    </div>
+    </div>
+    <div class="btn">
+      <button id="btn_editar" ion-button round full>Editar</button>
+    </div>
+    
   </div>
-  <div class="edtEmail">
-    <ion-item>
-      <ion-label color="primary" stacked>Email</ion-label>
-      <ion-input type="email" placeholder="{{dados.dados.email}}" [(ngModel)]="edtUsuario.email"></ion-input>
-    </ion-item>
-  </div>
-  <div class="edtSenha">
-    <ion-item>
-      <ion-label color="primary" stacked>Senha</ion-label>
-      <ion-input type="email" placeholder="Senha" [(ngModel)]="edtUsuario.senha"></ion-input>
-    </ion-item>
-  </div>
-  <div class="edtEnd" *ngIf='dados.dados.endereco !== null'>
-    <ion-item>
-      <ion-label color="primary" stacked>Rua</ion-label>
-      <ion-input type="email" placeholder="{{dados.dados.endereco.rua}}" [(ngModel)]="edtEnd.rua"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" stacked>Número</ion-label>
-      <ion-input type="email" placeholder="{{dados.dados.endereco.numero}}" [(ngModel)]="edtEnd.numero"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" stacked>Complemento</ion-label>
-      <ion-input type="email" placeholder="{{dados.dados.endereco.complemento}}" [(ngModel)]="edtEnd.complemento"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" stacked>Bairro</ion-label>
-      <ion-input type="email" placeholder="{{dados.dados.endereco.bairro}}" [(ngModel)]="edtEnd.bairro"></ion-input>
-    </ion-item>
-  </div>
-  <div class="edtEnd" *ngIf='dados.dados.endereco == null'>
-    <ion-item>
-      <ion-label color="primary" stacked>Rua</ion-label>
-      <ion-input type="email" placeholder="Rua" [(ngModel)]="edtEnd.rua"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" stacked>Número</ion-label>
-      <ion-input type="email" placeholder="Número" [(ngModel)]="edtEnd.numero"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" stacked>Complemento</ion-label>
-      <ion-input type="email" placeholder="Complemento" [(ngModel)]="edtEnd.complemento"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" stacked>Bairro</ion-label>
-      <ion-input type="email" placeholder="Bairro" [(ngModel)]="edtEnd.bairro"></ion-input>
-    </ion-item>
-  </div>
-  <div>
-    <button ion-button round full (click)="editarUsuario()">
-      Salvar Dados
-    </button>
-  </div>
-  <ion-content padding>
-</ion-content>
+  </ion-content>
+  
