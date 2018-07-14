@@ -43,32 +43,12 @@ export class PerfilDoUsuarioPage {
   }
 
   editarUsuario(){
-    var idUser = this.userData[0].dados.id;
-    console.log(idUser);       
-    if (this.edtUsuario.nome == null){
-      delete this.edtUsuario['nome'];
-    }
-    if (this.edtUsuario.email == null){
-      delete this.edtUsuario['email'];
-    }
-    if (this.edtUsuario.senha == null){
-      delete this.edtUsuario['senha'];
-    }
-    if (this.edtEnd.rua == null){
-      delete this.edtEnd['rua'];
-    }
-    if (this.edtEnd.numero == null){
-      delete this.edtEnd['numero'];
-    }
-    if (this.edtEnd.complemento == null){
-      delete this.edtEnd['complemento'];
-    }
-    if (this.edtEnd.bairro == null){
-      delete this.edtEnd['bairro'];
-    }
+    var idUser = this.userData[0].dados.id;       
+    this.verificaDados(this.edtUsuario);     
+    this.verificaDados(this.edtEnd);
     if (!this.isEmpty(this.edtEnd)){
       this.edtUsuario.endereco = this.edtEnd;  
-    }    
+    } 
     console.log(this.edtUsuario);
     this.cadastroClienteProvider.putEditarCliente('/usuarios/'+idUser, this.edtUsuario).then(novousuario => {
       console.log(novousuario)
@@ -80,6 +60,15 @@ export class PerfilDoUsuarioPage {
 
   isEmpty(obj) {
     return Object.keys(obj).length === 0;
+  }
+
+  verificaDados(obj){
+    var item;
+    for (item in obj){
+      if (obj[''+item] == null){
+        delete obj[''+item]
+      }
+    }
   }
 
 }
