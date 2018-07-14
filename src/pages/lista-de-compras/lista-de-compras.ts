@@ -43,8 +43,8 @@ export class ListaDeComprasPage {
     });
   }
 
-  itemClicked(){
-    this.navCtrl.push(ListaDeComprasProdutosPage);
+  itemClicked(lista){
+    this.navCtrl.push(ListaDeComprasProdutosPage, {listaId: lista.id});
   }
   
 }

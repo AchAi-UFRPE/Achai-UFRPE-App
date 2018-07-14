@@ -19,19 +19,19 @@ export class ListaDeComprasProdutosPage {
 
   items: any;
   lista: any;
+  idLista: any;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public produtosProvider: ProdutosProvider,
     public alertCtrl: AlertController,
     public actionSheetCtrl: ActionSheetController) {
-      this.inicializaLista()           
+      this.idLista = navParams.get('listaId')
+      this.inicializaLista()                
   }
 
-  inicializaLista() {
-    var login = JSON.parse(localStorage.getItem('dadosLocalLogin'));
-    var id = parseInt(login.dados.cliente.id);
-    this.produtosProvider.getProdutos('/listaDeProdutos/lista/'+id).then(data => {
+  inicializaLista() {    
+    this.produtosProvider.getProdutos('/listaDeProdutos/lista/'+this.idLista).then(data => {
       this.lista = JSON.parse(data['_body']);
       if (this.lista[0]!= null) {
         this.initializeItems();
