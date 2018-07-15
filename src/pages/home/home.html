@@ -22,12 +22,11 @@
     <ion-fab right bottom>
       <button ion-fab mini="light"><ion-icon name="add"></ion-icon></button>
       <ion-fab-list side="left">
-        <button ion-fab (click)="goToPerfil()"><ion-icon name="person"></ion-icon></button>  
+        <button ion-fab (click)="goToCarrinho()"><ion-icon name="md-cart"></ion-icon></button>
+        <button ion-fab (click)="goToListaDeCompras()"><ion-icon name="ios-list-box"></ion-icon></button>                      
       </ion-fab-list>
       <ion-fab-list side="top">
-        <button ion-fab (click)="goToCarrinho()"><ion-icon name="md-cart"></ion-icon></button>
-        <button ion-fab (click)="goToListaDeCompras()"><ion-icon name="ios-list-box"></ion-icon></button>  
-        <button ion-fab (click)="goToCartao()"><ion-icon name="card"></ion-icon></button>         
+        <button ion-fab (click)="goToPerfil()"><ion-icon name="person"></ion-icon></button>
       </ion-fab-list>
     </ion-fab>
   </ion-content>

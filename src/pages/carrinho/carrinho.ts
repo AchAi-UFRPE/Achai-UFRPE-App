@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ActionSheetController } from 'ionic-angular'
 import { ProdutosProvider } from '../../providers/services/produtosService';
+import { CartaoPage } from '../cartao/cartao';
 
 /**
  * Generated class for the CarrinhoPage page.
@@ -22,7 +23,8 @@ export class CarrinhoPage {
     dados: null,
     nome: null,
     id_Usuario: null 
-  }
+  };
+  valor_total = '20.00';  
   
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public actionSheetCtrl: ActionSheetController,
@@ -67,11 +69,24 @@ export class CarrinhoPage {
       buttons: [
         {
           text: 'Não',
-          handler: data => {
+          handler: data => {   
+            var login = JSON.parse(localStorage.getItem('dadosLocalLogin')); 
+            var id = parseInt(login.dados.cliente.id);            
+            this.listaCarrinho.forEach(element => {
+              if (element['quantidade'] == null || undefined || '' || element['quantidade'] < 1){
+                element['quantidade'] = 1;
+              }
+              else{
+                var intValue = parseInt(element['quantidade']);
+                element['quantidade'] = intValue;
+              }                      
+            });
             data = {};
             data.lista = this.listaCarrinho;
-            data.id_usuario = 1;
+            data.id_usuario = id;
+
             console.log(data);
+            this.navCtrl.push(CartaoPage);            
           }
         },
         {
@@ -110,6 +125,7 @@ export class CarrinhoPage {
             data.id_usuario = id;
             console.log(data);
             this.produtosProvider.postLista("/listaDeCompra", data)
+            this.navCtrl.push(CartaoPage);
             }
           }
         

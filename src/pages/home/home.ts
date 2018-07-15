@@ -104,34 +104,11 @@ export class HomePage {
   }
 
   addItemCarrinho(produto){
-    const prompt = this.alertCtrl.create({      
-      title: "Quantos produtos deseja?",
-      inputs: [
-        {
-          name: 'Quantidade',
-          placeholder: 'Quantidade'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Ok',
-          handler: data => {
-            if(data.Quantidade > 0){              
-              produto.quantidade = parseInt(data.Quantidade);               
-              this.listaCarrinho.push(produto);
-            }
-          }
-        }
-      ]
-    });
-    prompt.present();
+                  
+    this.listaCarrinho.push(produto);
+  
   }
+        
   
 }
 

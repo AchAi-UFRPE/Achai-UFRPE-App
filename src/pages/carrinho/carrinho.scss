@@ -13,10 +13,20 @@ page-carrinho {
     .btn{
         position: relative;        
         margin-right: auto;
-        margin-left: auto;
+        margin-left: auto;        
         font-weight: bold;
         font-size: 0.9em;
-        margin-top: 20% !important;
+        margin-top: 10% !important;
+    }
+
+    .valortotal{
+        left: 150px;
+        position: relative;
+    }
+
+    .qntdP{       
+       width: auto;
+       
     }
 
 }

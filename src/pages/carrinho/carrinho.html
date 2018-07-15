@@ -8,17 +8,24 @@
 
 
 <ion-content padding>
-    <ion-list *ngFor="let produto of listaCarrinho">            
-        <ion-item (click)="itemClicked(produto)">
+    <ion-list *ngFor="let produto of listaCarrinho; let in = index">            
+        <ion-item>
             <ion-avatar item-start>
               <td><img src="assets/imgs/img_produtos/{{produto.id}}.png"/></td>
             </ion-avatar>
             <p>Produto: {{produto.nome}}</p>
-            <p>Marca: {{produto.marca}}</p>             
-            <p>Quantidade: {{produto.quantidade}}</p>            
-          </ion-item>          
+            <p>Marca: {{produto.marca}}</p>
+            <p>Quantidade:                          
+            <ion-item class="qntdP">                            
+              <ion-input type="number" name='produto-{{in}}' placeholder='Select' min='1' [(ngModel)]= 'produto.quantidade'></ion-input>
+            </ion-item>
+            </p>
+        </ion-item>          
       </ion-list>
 
+      <div class='valortotal'>
+        <p>Valor Total: {{'R$ '+ valor_total}}</p>
+      </div>
       <div class='btn'>
         <button (click)="show()" type="button" ion-button block outline>
           Efetuar Pagamento
