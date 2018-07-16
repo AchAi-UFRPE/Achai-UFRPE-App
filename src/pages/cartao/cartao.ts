@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { DataEntregaPage } from '../data-entrega/data-entrega';
 
 /**
  * Generated class for the CartaoPage page.
@@ -25,7 +26,7 @@ export class CartaoPage {
   public voltar():void{
     this.navCtrl.pop();
   }
-  public irLogin():void{
-    this.navCtrl.push(HomePage);
+  public irDataEntrega():void{
+    this.navCtrl.push(DataEntregaPage);
   }
 }

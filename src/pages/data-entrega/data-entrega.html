@@ -1,0 +1,34 @@
+<!--
+  Generated template for the DataEntregaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>data-entrega</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-item>
+      <ion-label>Data de Entrega</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Horário</ion-label>
+      <ion-datetime displayFormat="HH:mm" [(ngModel)]="myHrr"></ion-datetime>
+    </ion-item>
+
+    <div>
+      <button (click)='showDate()' ion-button round full>
+        Me aperta vai
+      </button>
+    </div>
+
+</ion-content>
