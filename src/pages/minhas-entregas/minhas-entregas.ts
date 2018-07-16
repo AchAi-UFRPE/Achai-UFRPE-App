@@ -65,5 +65,8 @@ export class MinhasEntregasPage {
    
       actionSheet.present();
     }
+    public voltar():void{
+      this.navCtrl.pop();
+    }
 
 }

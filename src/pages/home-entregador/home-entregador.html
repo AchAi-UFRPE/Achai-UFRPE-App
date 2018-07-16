@@ -1,31 +1,31 @@
-<ion-header>
-  <br>
-  <div class="text">
-    <h2>Solicitações Disponíveis</h2>
+<ion-content padding>
+  <div class="content">
+    <div class="text">
+      <h2>Solicitações Disponíveis</h2>
+    </div>      
+    <div class="lista">
+        <ion-list *ngFor="let lista of minhaLista">    
+            <ion-item (click)="itemClicked(entrega)">
+              <ion-avatar item-start>
+                <td><img src="assets/imgs/img_produtos/{{produto.id}}.png"/></td>
+              </ion-avatar>
+              <h3>{{cliente.nome}}</h3>
+              <p>Entrega: {{produto.marca}}</p>          
+              <p>Valor das Compras: {{produto.marca}}</p> 
+              <p>Valor da Entrega: {{produto.marca}}</p> 
+            </ion-item>      
+        </ion-list>
+    </div>
+      <ion-fab right bottom>
+        <button ion-fab mini="light"><ion-icon name="menu"></ion-icon></button>
+        <ion-fab-list side="left">
+          <button ion-fab (click)="goToPerfil()"><ion-icon name="person"></ion-icon></button>  
+        </ion-fab-list>
+        <ion-fab-list side="top">
+          <button ion-fab (click)="goToMinhasEntregas()"><ion-icon name="md-cart"></ion-icon></button>  
+                   
+        </ion-fab-list>
+      </ion-fab>
   </div>
-</ion-header>
-
-<ion-content padding>  
-  <ion-list *ngFor="let lista of minhaLista">    
-      <ion-item (click)="itemClicked(entrega)">
-        <ion-avatar item-start>
-          <td><img src="assets/imgs/img_produtos/{{produto.id}}.png"/></td>
-        </ion-avatar>
-        <h3>{{cliente.nome}}</h3>
-        <p>Entrega: {{produto.marca}}</p>          
-        <p>Valor das Compras: {{produto.marca}}</p> 
-        <p>Valor da Entrega: {{produto.marca}}</p> 
-      </ion-item>      
-  </ion-list>
- 
-  <ion-fab right bottom>
-    <button ion-fab mini="light"><ion-icon name="menu"></ion-icon></button>
-    <ion-fab-list side="left">
-      <button ion-fab (click)="goToPerfil()"><ion-icon name="person"></ion-icon></button>  
-    </ion-fab-list>
-    <ion-fab-list side="top">
-      <button ion-fab (click)="goToMinhasEntregas()"><ion-icon name="md-cart"></ion-icon></button>  
-               
-    </ion-fab-list>
-  </ion-fab>
+  
 </ion-content>

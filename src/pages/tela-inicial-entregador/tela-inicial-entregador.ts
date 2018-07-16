@@ -3,13 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MinhasEntregasPage } from '../minhas-entregas/minhas-entregas';
 import { PerfilDoEntregadorPage } from '../perfil-do-entregador/perfil-do-entregador';
 
-/**
- * Generated class for the TelaInicialEntregadorPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-tela-inicial-entregador',
@@ -31,5 +24,9 @@ export class TelaInicialEntregadorPage {
 
 
   irLista(){this.navCtrl.push(MinhasEntregasPage);}
+
+  public voltar():void{
+    this.navCtrl.pop();
+  }
 
 }
