@@ -12,34 +12,34 @@
   <div class="input">
     <div class="input1">
       <ion-item>
-        <ion-input id="numero_cartao" type="text" placeholder="Número"></ion-input>
+        <ion-input id="numero_cartao" type="text" placeholder="Número" [(ngModel)]= "dadosCartao.numero"></ion-input>
       </ion-item>
     </div>
     <div class="row">
         <div class="input2">
         <ion-item>
-          <ion-input id="validade" type="text" placeholder="Validade" ></ion-input>
+          <ion-input id="validade" type="text" placeholder="Validade" [(ngModel)]= "dadosCartao.validade"></ion-input>
         </ion-item>
       </div>
       <div class="input3">
         <ion-item>
-          <ion-input id="codigo" type="text" placeholder="CVC"></ion-input>
+          <ion-input id="codigo" type="text" placeholder="CVC" [(ngModel)]= "dadosCartao.codigo"></ion-input>
         </ion-item>
       </div>
     </div>
     <div class="input4">
       <ion-item>
-        <ion-input id="nome_titular" type="text" placeholder="Nome do titular do cartão"></ion-input>
+        <ion-input id="nome_titular" type="text" placeholder="Nome do titular do cartão" [(ngModel)]= "dadosCartao.nome"></ion-input>
       </ion-item>
     </div>
     <div class="input5">
         <ion-item>
-          <ion-input id="cpf_titular" type="text" placeholder="CPF titular do cartão"></ion-input>
+          <ion-input id="cpf_titular" type="text" placeholder="CPF titular do cartão" [(ngModel)]= "dadosCartao.cpf"></ion-input>
         </ion-item>
       </div>
   </div>
   <div class="btn">
-    <button id="btn_confirmar" (click)="irDataEntrega()" ion-button full round>Confirmar</button>
+    <button id="btn_confirmar" (click)="irConfirmarCartao()" ion-button full round>Confirmar</button>
   </div>
 </div>
 </ion-content>
