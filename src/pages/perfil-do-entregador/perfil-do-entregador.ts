@@ -34,21 +34,20 @@ export class PerfilDoEntregadorPage {
 
   editarEntregador(){
     var idEntregador = this.dadoEntregador[0].dados.id;
-
-    if (this.edtEntregador.nome == null){
-      delete this.edtEntregador['nome'];
-    }
-    if (this.edtEntregador.email == null){
-      delete this.edtEntregador['email'];
-    }
-    if (this.edtEntregador.senha == null){
-      delete this.edtEntregador['senha'];
-    }
+    this.verificaDados(this.editarEntregador)
     this.cadastroEntregadorProvider.putEditarEntregador('/entregadores/'+idEntregador, this.edtEntregador).then(novousuario => {
       console.log(novousuario)
     }, (err) => {
         console.log(err);
     });
     this.navCtrl.push(LoginPage);
+  }
+  verificaDados(obj){
+    var item;
+    for (item in obj){
+      if (obj[''+item] == null){
+        delete obj[''+item]
+      }
+    }
   }
 }

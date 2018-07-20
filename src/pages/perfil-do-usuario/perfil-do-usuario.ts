@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CadastroClienteProvider } from '../../providers/services/cadastroClienteService';
 import { CadastroClientePage } from '../cadastro-cliente/cadastro-cliente';
 import { LoginPage } from '../login/login';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the PerfilDoUsuarioPage page.
@@ -55,7 +56,7 @@ export class PerfilDoUsuarioPage {
     }, (err) => {
         console.log(err);
     });
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.push(HomePage);
   }
 
   isEmpty(obj) {
@@ -70,5 +71,7 @@ export class PerfilDoUsuarioPage {
       }
     }
   }
-
+  public voltar():void{
+    this.navCtrl.pop();
+  }
 }
