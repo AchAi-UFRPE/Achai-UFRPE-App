@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular/umd';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { CadastroClienteProvider } from '../../providers/services/cadastroClienteService';
 
@@ -65,7 +65,7 @@ export class CadastroClientePage {
 
   private confirmacaoCpf(cpf_usuario):any{
     if (cpf_usuario != null){
-      if (cpf_usuario.toString().length == 11){
+      if (cpf_usuario.toString().length > 11){
         return true;
       }else{
         this.cpfInvalido();

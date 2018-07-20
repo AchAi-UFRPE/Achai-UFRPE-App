@@ -23,8 +23,7 @@ export class PerfilDoEntregadorPage {
     public navParams: NavParams, 
     public cadastroEntregadorProvider: CadastroEntregadorProvider) {
       this.dadoEntregador.push(JSON.parse(localStorage.getItem('dadosLocalLogin')));
-      console.log("AQUI VEM O RESPONSE");
-      console.log(this.dadoEntregador['_dados']);
+      console.log(this.dadoEntregador);
   }
 
 

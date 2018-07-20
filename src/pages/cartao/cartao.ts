@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular/umd';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { DataEntregaPage } from '../data-entrega/data-entrega';
-import { CadastroCartaoProvider } from '../../providers/services/cadastroCartaoService';
 import { CarrinhoPage } from '../carrinho/carrinho';
+import {CadastroClienteProvider} from '../../providers/services/cadastroClienteService';
 
 /**
  * Generated class for the CartaoPage page.
@@ -18,7 +18,6 @@ import { CarrinhoPage } from '../carrinho/carrinho';
   templateUrl: 'cartao.html',
 })
 export class CartaoPage {
-  
 
   public dadosCartao = {
     numero: null,
@@ -30,7 +29,7 @@ export class CartaoPage {
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    public CadastroCartaoProvider: CadastroCartaoProvider,
+    public CadastroClienteProvider: CadastroClienteProvider,
     public alertCtrl: AlertController) {
   }
 
@@ -80,7 +79,7 @@ public confirmacaoValidade(validade){
 /**
  * confirmacaoCodigo
  */
-public confirmacaoCodigo(codigo){
+public confirmacaoCodigo(codigo:String){
   var retorno = false;
   if (codigo != null){
   if (codigo.toString().length == 3){
@@ -100,7 +99,7 @@ public confirmacaoCodigo(codigo){
 /**
  * confirmacaoNome
  */
-public confirmacaoNome(nome) {
+public confirmacaoNome(nome:String) {
   var retorno = false;
   if (nome != null){
     if (nome.toString().length >= 3){
@@ -125,7 +124,7 @@ public confirmacaoNome(nome) {
  * 4- Essa soma mod 9 (?) deve ser igual ao segundo digito do dv
  * obs. (?) valor do mod n confirmado
  */
-public confirmacaoCPF(cpf) {
+public confirmacaoCPF(cpf:String) {
   var retorno = false;
   if (cpf != null){
     if (cpf.toString().length == 11){
@@ -156,6 +155,7 @@ public invalido(what){
  */
 public irConfirmarCartao() {
 
+  console.log("apertado o botão")
   let nome_cartao = this.dadosCartao.nome;
   let numero_cartao = this.dadosCartao.numero;
   let cvv_cartao = this.dadosCartao.codigo;
@@ -167,12 +167,12 @@ public irConfirmarCartao() {
   this.confirmacaoCodigo(cvv_cartao) &&
   this.confirmacaoValidade(validade_cartao) &&
   this.confirmacaoCPF(cpf_cartao)){
-    this.CadastroCartaoProvider.postCartao('/cartoes', this.dadosCartao)
+    this.CadastroClienteProvider.postCadastroCliente('/cartoes', this.dadosCartao)
     .then(dadosCartao => {
       
       console.log(dadosCartao); // data received by server 
       if (dadosCartao['_body'] != "[]"){        
-        this.navCtrl.push(CarrinhoPage);
+        this.navCtrl.push(CarrinhoPage); //mandar pra tela de sucesso
       }else{        
         this.showAlertFailedCadastro();
       }

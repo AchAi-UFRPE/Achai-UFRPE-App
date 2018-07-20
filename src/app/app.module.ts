@@ -30,7 +30,7 @@ import { HomeEntregadorPage } from '../pages/home-entregador/home-entregador';
 import { MinhasEntregasPage } from '../pages/minhas-entregas/minhas-entregas';
 import { ListaDeComprasProdutosPage } from '../pages/lista-de-compras-produtos/lista-de-compras-produtos';
 import { DataEntregaPage } from '../pages/data-entrega/data-entrega';
-import { CadastroCartaoProvider } from '../providers/services/cadastroCartaoService';
+
 
 @NgModule({
   declarations: [
@@ -83,7 +83,6 @@ import { CadastroCartaoProvider } from '../providers/services/cadastroCartaoServ
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginProvider,
-    CadastroCartaoProvider,
     CadastroClienteProvider,
     CadastroEntregadorProvider,
     ProdutosProvider
