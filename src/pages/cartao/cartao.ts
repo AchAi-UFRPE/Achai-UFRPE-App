@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular/umd';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { DataEntregaPage } from '../data-entrega/data-entrega';
 import { CadastroCartaoProvider } from '../../providers/services/cadastroCartaoService';
