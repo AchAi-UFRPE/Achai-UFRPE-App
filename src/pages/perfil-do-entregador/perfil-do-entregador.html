@@ -1,3 +1,4 @@
+
 <ion-content padding  *ngFor="let dados of dadoEntregador">
   <div class="content">
     <div class="texto">
@@ -22,9 +23,9 @@
     </div>
     </div>
     <div class="btn">
-      <button id="btn_editar" ion-button round full>Editar</button>
+      <button id="btn_cancelar" ion-button round (click)="cancelar()">Cancelar</button>
+      <button id="btn_editar" ion-button round  (click)="editarEntregador()" >Editar</button>
     </div>
-    
   </div>
   </ion-content>
   

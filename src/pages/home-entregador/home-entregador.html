@@ -1,7 +1,11 @@
+<ion-header>
+  <ion-toolbar color=primary >
+  </ion-toolbar>
+</ion-header> 
 <ion-content padding>
   <div class="content">
     <div class="text">
-      <h2>Solicitações Disponíveis</h2>
+      <ion-label> Solicitações disponíveis </ion-label>
     </div>      
     <div class="lista">
         <ion-list *ngFor="let lista of minhaLista">    
@@ -18,14 +22,11 @@
     </div>
       <ion-fab right bottom>
         <button ion-fab mini="light"><ion-icon name="menu"></ion-icon></button>
-        <ion-fab-list side="left">
-          <button ion-fab (click)="goToPerfil()"><ion-icon name="person"></ion-icon></button>  
-        </ion-fab-list>
         <ion-fab-list side="top">
           <button ion-fab (click)="goToMinhasEntregas()"><ion-icon name="md-cart"></ion-icon></button>  
-                   
+          <button ion-fab (click)="goToPerfil()"><ion-icon name="person"></ion-icon></button>  
         </ion-fab-list>
-      </ion-fab>
+      </ion-fab>      
   </div>
   
 </ion-content>
