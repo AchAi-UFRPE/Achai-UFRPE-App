@@ -61,16 +61,16 @@ unFormat(val) {
     v = v.replace(/(\d{3})(\d)/, '$1.$2'); //Insert a dot between the third and quarter digit
     v = v.replace(/(\d{3})(\d)/, '$1.$2'); //Insert a dot between the third and quarter digit again
     v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); //Insert an dash between the third and quarter digit
-    return v;
+    return v
 }
 //fim do código para colocar máscara em cpf e cnpj
 
   public dadosCartao = {
     numero: null,
     validade: null,
-    codigo: null,
-    nome: null,
-    cpf: null
+    cvc: null,
+    titular: null,
+    cpftitular: null
   }
 
   constructor(public navCtrl: NavController,
@@ -151,11 +151,11 @@ public confirmacaoNome(nome) {
     if (nome.toString().length >= 3){
       retorno = true;
     }else{
-      this.invalido("nome");
+      this.invalido("Nome");
       retorno = false;
       }
   }else{
-    this.invalido("nome");
+    this.invalido("Nome");
     retorno = false;
     }
     return retorno;
@@ -187,8 +187,9 @@ public confirmacaoCPF(cpf:String) {
 }
 
 public invalido(what){
+  console.log(what)
   const alert = this.alertCtrl.create({
-    subTitle: what + ' inválido!',
+    subTitle: what.concat(' inválido!'),
     buttons: ['OK']
   });
   alert.present();
@@ -202,21 +203,23 @@ public invalido(what){
 public irConfirmarCartao() {
 
   console.log("apertado o botão")
-  let nome_cartao = this.dadosCartao.nome;
+  let nome_cartao = this.dadosCartao.titular;
   let numero_cartao = this.dadosCartao.numero;
-  let cvv_cartao = this.dadosCartao.codigo;
+  let cvv_cartao = this.dadosCartao.cvc;
   let validade_cartao = this.dadosCartao.validade;
-  let cpf_cartao = this.dadosCartao.cpf
+  let cpf_cartao = this.dadosCartao.cpftitular;
+  console.log("Eu li: ", this.dadosCartao);
 
   if(this.confirmacaoNome(nome_cartao) && 
   this.confirmacaoNumero(numero_cartao) &&
   this.confirmacaoCodigo(cvv_cartao) &&
   this.confirmacaoValidade(validade_cartao) &&
   this.confirmacaoCPF(cpf_cartao)){
+    console.log("Eu enviei", this.dadosCartao);
     this.CadastroClienteProvider.postCadastroCliente('/cartoes', this.dadosCartao)
     .then(dadosCartao => {
       
-      console.log(dadosCartao); // data received by server 
+      console.log("Eu recebi", dadosCartao); // data received by server 
       if (dadosCartao['_body'] != "[]"){        
         this.navCtrl.push(CarrinhoPage); //mandar pra tela de sucesso
       }else{        

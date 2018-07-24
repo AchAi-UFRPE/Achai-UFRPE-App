@@ -23,18 +23,18 @@
       </div>
       <div class="input3">
         <ion-item>
-          <ion-input id="codigo" type="text" placeholder="CVC" [(ngModel)]= "dadosCartao.codigo"></ion-input>
+          <ion-input id="codigo" type="text" placeholder="CVC" [(ngModel)]= "dadosCartao.cvc"></ion-input>
         </ion-item>
       </div>
     </div>
     <div class="input4">
       <ion-item>
-        <ion-input id="nome_titular" type="text" placeholder="Nome do titular do cartão" [(ngModel)]= "dadosCartao.nome"></ion-input>
+        <ion-input id="nome_titular" type="text" placeholder="Nome do titular do cartão" [(ngModel)]= "dadosCartao.titular"></ion-input>
       </ion-item>
     </div>
     <div class="input5">
         <ion-item>
-          <ion-input id="cpf_titular" type="text" placeholder="CPF titular do cartão" [(ngModel)]= "dadosCartao.cpf" (ionBlur)="dadosCartao.cpf = format(dadosCartao.cpf)"></ion-input>
+          <ion-input id="cpf_titular" type="text" placeholder="CPF titular do cartão" [(ngModel)]= "dadosCartao.cpftitular" (ionBlur)="dadosCartao.cpftitular = format(dadosCartao.cpftitular)"></ion-input>
         </ion-item>
       </div>
   </div>
