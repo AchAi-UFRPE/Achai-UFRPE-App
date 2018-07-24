@@ -49,4 +49,7 @@ export class PerfilDoEntregadorPage {
       }
     }
   }
+  cancelar(){
+    this.navCtrl.pop();
+  }
 }

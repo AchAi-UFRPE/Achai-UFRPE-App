@@ -1,8 +1,13 @@
 page-minhas-entregas {
     .texto{
-        margin-top: 5%;
         display: block;
         margin-left: auto;
         margin-right: auto;
+        font-size: 1.8em;
     }
+    .label-md,
+    .label-ios{
+      color: #2c3e50;
+    }
+    
 }
