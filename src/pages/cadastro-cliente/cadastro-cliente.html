@@ -29,7 +29,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-input id="cpf_cliente" type="text" placeholder="CPF" [(ngModel)]= "dadosCadastro.cpf"></ion-input>
+        <ion-input id="cpf_cliente" type="text" placeholder="CPF" [(ngModel)]= "dadosCadastro.cpf" (ionBlur)="dadosCadastro.cpf = format(dadosCadastro.cpf)"></ion-input>
       </ion-item>
 
     </ion-list>

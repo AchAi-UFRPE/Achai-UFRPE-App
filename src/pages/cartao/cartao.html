@@ -34,7 +34,7 @@
     </div>
     <div class="input5">
         <ion-item>
-          <ion-input id="cpf_titular" type="text" placeholder="CPF titular do cartão" [(ngModel)]= "dadosCartao.cpf"></ion-input>
+          <ion-input id="cpf_titular" type="text" placeholder="CPF titular do cartão" [(ngModel)]= "dadosCartao.cpf" (ionBlur)="dadosCartao.cpf = format(dadosCartao.cpf)"></ion-input>
         </ion-item>
       </div>
   </div>
