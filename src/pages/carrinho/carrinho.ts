@@ -132,7 +132,10 @@ export class CarrinhoPage {
       ]
     });
     prompt.present();
-  } 
+  }
+  voltar(){
+    this.navCtrl.pop();
+  }
   
   
 }

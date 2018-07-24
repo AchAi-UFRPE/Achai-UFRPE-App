@@ -1,8 +1,9 @@
 page-login {
     .content {
-        background: #FF5F6D;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to top, #FF5F6D, #FFC371);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to top, #FF5F6D, #FFC371); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: #2c3e50;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #2c3e50, #2980b9);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
         margin-top: auto;
         margin-bottom: auto;
     }
@@ -33,29 +34,29 @@ page-login {
     }
     .label-md,
     .label-ios{
-      color: #FFC371;
+      color: #FFF;
 
     }
     .content .inputs ion-item,
     .content .inputs .item-inner{
-        color: #FFC371;
+        color: #2c3e50;
         border-radius: 25px;
         margin-bottom: 2%;
     }
     .text-input::-moz-placeholder {
-        font-size: 0.9em;
-        color: #FFC371;
+        font-size: 1.2em;
+        color: #2c3e50;
         font-weight: bold;
     }
       
     .text-input:-ms-input-placeholder {
-        color: #FFC371;
+        color: #2c3e50;
         font-weight: bold;
-        font-size: 1.0em;
+        font-size: 1.2em;
     }
       
     .text-input::-webkit-input-placeholder {
-        color: #FFC371;
+        color: #2c3e50;
         font-weight: bold;
         font-size: 15px;
     }

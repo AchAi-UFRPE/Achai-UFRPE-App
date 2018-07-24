@@ -1,12 +1,3 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>lista produtos</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
     <ion-list *ngFor="let produto of items">    
         <ion-item (click)="itemClicked(produto)">

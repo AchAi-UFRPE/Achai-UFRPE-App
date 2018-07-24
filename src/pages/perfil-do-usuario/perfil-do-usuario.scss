@@ -1,11 +1,11 @@
 page-perfil-do-usuario {
     .texto{
         font-size: 3.0rem;
-        color: #FF5F6D;
+        color: #2c3e50;
         text-align: center;
         margin-bottom: 5%;
         font-weight: bold;
-        margin-top: 5%;
+        margin-top: 20%;
     }
     .btn{
         margin-right: auto;
@@ -13,31 +13,34 @@ page-perfil-do-usuario {
         font-weight: bold;
         font-size: 0.9em;
     }
+
+
     .content  ion-item,
     .content .item-inner{
-        color: #FF5F6D;
+        color: #2c3e50;
         border-radius: 25px;
         margin-bottom: 5%;
+        border-color: #2c3e50;
     }
     .text-input::-moz-placeholder {
         font-size: 0.9em;
-        color: #FF5F6D;
+        color: #2c3e50;
         font-weight: bold;
     }
       
     .text-input:-ms-input-placeholder {
-        color: #FF5F6D;
+        color: #2c3e50;
         font-weight: bold;
         font-size: 1.0em;
     }
       
     .text-input::-webkit-input-placeholder {
-        color: #FF5F6D;
+        color: #2c3e50;
         font-weight: bold;
         font-size: 15px;
     }
     .label-md,
     .label-ios{
-      color: #FF5F6D;
+      color: #2c3e50;
     }
 }

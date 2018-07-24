@@ -1,51 +1,56 @@
 page-perfil-do-entregador {
     .texto{
         font-size: 3.0rem;
-        color: #FF5F6D;
+        color: #2c3e50;
         text-align: center;
         margin-bottom: 5%;
         font-weight: bold;
-        margin-top: 5%;
+        margin-top: 25%;
     }
     .editNome{
-        margin-top:40%;
+        margin-top:20%;
     }
     .content .inputs ion-item,
     .content .inputs .item-inner{
-        color: #FF5F6D;
+        color: #2c3e50;
         border-radius: 25px;
         margin-bottom: 4%;
         height: 15px; 
     }
+    .content .inputs .item, 
+    .content .inputs .item-inner{
+        background: transparent; 
+        border-color: #2c3e50;
+  }
     
-    .content .inputs {
-        border: none;  
-    }
     .label-md,
     .label-ios{
-        color: #FF5F6D;
+        color: #2c3e50;
     }
     .text-input::-moz-placeholder {
-        font-size: 0.9em;
-        color: #FF5F6D;
+        font-size: 1.2em;
+        color: #2c3e50;
         font-weight: bold;
     }
       
     .text-input:-ms-input-placeholder {
-        color: #FF5F6D;
+        color: #2c3e50;
         font-weight: bold;
-        font-size: 1.0em;
+        font-size: 1.2em;
     }
       
     .text-input::-webkit-input-placeholder {
-        color: #FF5F6D;
+        color: #2c3e50;
         font-weight: bold;
         font-size: 15px;
     }
     .btn button{
-        background-color: #FF5F6D;
+        background-color: #2c3e50;
         margin-top:5%;
-        width: 45%;
-        margin-left: 2.5%; 
+        width: 44%;
+        margin-left: 4%; 
+    }
+    .content .input input:focus{
+       color: #2c3e50!important;
     }
 }
