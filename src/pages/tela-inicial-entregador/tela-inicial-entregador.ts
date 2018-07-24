@@ -17,7 +17,7 @@ export class TelaInicialEntregadorPage {
     console.log('ionViewDidLoad TelaInicialEntregadorPage');
   }
 
-  irPesquisa(){this.navCtrl.push(MinhasEntregasPage);} //alterar caminho
+  irPesquisa(){this.navCtrl.push(MinhasEntregasPage);} // alterar caminho
 
 
   irPerfil(){this.navCtrl.push(PerfilDoEntregadorPage);}
