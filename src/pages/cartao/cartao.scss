@@ -14,25 +14,38 @@ page-cartao {
         font-size: 1.1em;
         color: #2c3e50;
     }
-    .content .input ion-item,
+    .content .input .item, 
     .content .input .item-inner{
+        background: transparent; 
+        border-color: #2c3e50;
+  }
+    .input-wrapper{
+        margin-bottom: 10px;
+        border: 1px solid transparent;   
+      }
+    .content .inputs ion-item,
+    .content .inputs .item-inner{
         color: #2c3e50;
         border-radius: 25px;
         margin-bottom: 4%;
         height: 15px; 
     }
-    .input{
-        border-radius: 15px;
-        margin-top: 5%;
+    .content .inputs .item, 
+    .content .inputs .item-inner{
+        background: transparent; 
+        border-color: #2c3e50;
+  }
+    .inputs{
+        margin-top: 10%;
     }
     .input2{
         border-radius: 15px;
-        width: 50%;
+        width: 51%;
     }
     .input3{
         margin-left: 5%;
         border-radius: 15px;
-        width: 45%;
+        width: 40%;
     }
     .input4{
         border-radius: 15px;
@@ -58,6 +71,8 @@ page-cartao {
     }
     .btn{
         margin-top: 15%;
+        margin-left: auto;
+        margin-right: auto;
        }
     .btn button{
         background-color: #2c3e50;

@@ -93,7 +93,7 @@ public confirmacaoNumero(numero:String):Boolean{
     if (numero.toString().length >= 14){
       return true;
     }else{
-      this.invalido("nome");
+      this.invalido("número");
       }
   }else{
     this.invalido("nome");

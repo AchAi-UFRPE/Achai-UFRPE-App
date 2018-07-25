@@ -30,13 +30,26 @@ page-cadastro-cliente {
     .content .inputs .item-inner{
         color: #2c3e50;
         border-radius: 25px;
-        margin-bottom: 2%;
+        margin-bottom: 3%;
+        height: 15px; 
     }
+    .input-wrapper{
+        margin-bottom: 10px;
+        border: 1px solid transparent;  
+    }
+    .content .inputs .item, 
+    .content .inputs .item-inner{
+        background: transparent; 
+        border-color: #2c3e50;
+        margin-left: 2%;
+  }
+    
     .text-input::-moz-placeholder {
         font-size: 0.9em;
         color: #2c3e50;
         font-weight: bold;
     }
+    
       
     .text-input:-ms-input-placeholder {
         color: #2c3e50;

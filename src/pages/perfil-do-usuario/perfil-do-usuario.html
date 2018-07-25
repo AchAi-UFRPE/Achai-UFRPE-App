@@ -7,62 +7,62 @@
 </ion-header>
 
 <ion-content padding *ngFor="let dados of userData">
-  <div class="texto">
-    <h2>Perfil</h2>
-  </div>
   <div class="content">
+      <div class="texto">
+          <ion-label>Perfil</ion-label>
+        </div>
       <div class="edtNome">
           <ion-item>
               <ion-label color="primary" ></ion-label>
-              <ion-input type="email" placeholder=" {{dados.dados.nome}}" [(ngModel)]="edtUsuario.nome"></ion-input>
+              <ion-input type="email" placeholder=" {{dados.dados.nome}}" [(ngModel)]="edtUsuario.nome"></ion-input><ion-icon name="person" item-right></ion-icon>
             </ion-item>
       </div>
       <div class="edtEmail">
           <ion-item>
             <ion-label color="primary" ></ion-label>
-            <ion-input type="email" placeholder="  {{dados.dados.email}}" [(ngModel)]="edtUsuario.email"></ion-input>
+            <ion-input type="email" placeholder="  {{dados.dados.email}}" [(ngModel)]="edtUsuario.email"></ion-input><ion-icon name="at" item-right></ion-icon>
           </ion-item>
       </div>
       <div class="edtSenha">
           <ion-item>
               <ion-label color="primary" ></ion-label>
-              <ion-input type="email" placeholder="  Senha" [(ngModel)]="edtUsuario.senha"></ion-input>
+              <ion-input type="email" placeholder="  Senha" [(ngModel)]="edtUsuario.senha"></ion-input><ion-icon name="create" item-right></ion-icon>
             </ion-item>
       </div>  
       <div class="edtEnd" *ngIf='dados.dados.endereco !== null'>
         <ion-item>
           <ion-label color="primary" ></ion-label>
-          <ion-input type="email" placeholder="  {{dados.dados.endereco.rua}}" [(ngModel)]="edtEnd.rua"></ion-input>
+          <ion-input type="email" placeholder="  {{dados.dados.endereco.rua}}" [(ngModel)]="edtEnd.rua"></ion-input><ion-icon name="home" item-right></ion-icon>
         </ion-item>
         <ion-item>
           <ion-label color="primary" ></ion-label>
-          <ion-input type="email" placeholder="{{dados.dados.endereco.numero}}" [(ngModel)]="edtEnd.numero"></ion-input>
+          <ion-input type="email" placeholder="{{dados.dados.endereco.numero}}" [(ngModel)]="edtEnd.numero"></ion-input><ion-icon name="home" item-right></ion-icon>
         </ion-item>
         <ion-item>
             <ion-label color="primary" ></ion-label>
-            <ion-input type="email" placeholder="  {{dados.dados.endereco.complemento}}" [(ngModel)]="edtEnd.complemento"></ion-input>
+            <ion-input type="email" placeholder="  {{dados.dados.endereco.complemento}}" [(ngModel)]="edtEnd.complemento"></ion-input><ion-icon name="home" item-right></ion-icon>
           </ion-item>
         <ion-item>
           <ion-label color="primary" ></ion-label>
-          <ion-input type="email" placeholder="  {{dados.dados.endereco.bairro}}" [(ngModel)]="edtEnd.bairro"></ion-input>
+          <ion-input type="email" placeholder="  {{dados.dados.endereco.bairro}}" [(ngModel)]="edtEnd.bairro"></ion-input><ion-icon name="home" item-right></ion-icon>
         </ion-item>
       </div>
       <div class="edtEnd" *ngIf='dados.dados.endereco == null'>
           <ion-item>
             <ion-label color="primary" ></ion-label>
-            <ion-input type="email" placeholder="  Rua" [(ngModel)]="edtEnd.rua"></ion-input>
+            <ion-input type="email" placeholder="  Rua" [(ngModel)]="edtEnd.rua"></ion-input><ion-icon name="home" item-right></ion-icon>
           </ion-item>
           <ion-item>
             <ion-label color="primary" ></ion-label>
-            <ion-input type="email" placeholder="  Número" [(ngModel)]="edtEnd.numero"></ion-input>
+            <ion-input type="email" placeholder="  Número" [(ngModel)]="edtEnd.numero"></ion-input><ion-icon name="home" item-right></ion-icon>
           </ion-item>
           <ion-item>
               <ion-label color="primary" ></ion-label>
-              <ion-input type="email" placeholder="  Complemento" [(ngModel)]="edtEnd.complemento"></ion-input>
+              <ion-input type="email" placeholder="  Complemento" [(ngModel)]="edtEnd.complemento"></ion-input><ion-icon name="home" item-right></ion-icon>
             </ion-item>
           <ion-item>
             <ion-label color="primary" ></ion-label>
-            <ion-input type="email" placeholder="  Bairro" [(ngModel)]="edtEnd.bairro"></ion-input>
+            <ion-input type="email" placeholder="  Bairro" [(ngModel)]="edtEnd.bairro"></ion-input><ion-icon name="home" item-right></ion-icon>
           </ion-item>
       </div>
       <div class='btn'>
