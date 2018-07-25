@@ -221,7 +221,7 @@ public irConfirmarCartao() {
       
       console.log("Eu recebi", dadosCartao); // data received by server 
       if (dadosCartao['_body'] != "[]"){        
-        this.navCtrl.push(CarrinhoPage); //mandar pra tela de sucesso
+        this.navCtrl.push(DataEntregaPage); //mandar pra tela de sucesso
       }else{        
         this.showAlertFailedCadastro();
       }

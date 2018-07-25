@@ -43,4 +43,8 @@ export class ListaDeComprasProdutosPage {
     this.items = this.lista;
   }
 
+  public voltar():void{
+    this.navCtrl.pop();
+  }
+
 }

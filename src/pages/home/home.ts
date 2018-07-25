@@ -21,6 +21,12 @@ export class HomePage {
   lista: any;  
   listaDeCompras = [];
   listaCarrinho = [];
+  nomeLista: any;
+
+  public produtoLista = {
+    id_produto: null,
+    id_lista: null
+  }
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -55,9 +61,18 @@ export class HomePage {
         },
         {
           text: 'Adicionar a Lista de Compras',          
-          handler: () => {                        
-            this.listaDeCompras.push(produto);
-            console.log(this.listaDeCompras);
+          handler: () => { 
+            var colors = [];  
+            var login = JSON.parse(localStorage.getItem('dadosLocalLogin'))        
+            var id = parseInt(login.dados.cliente.id);
+            this.produtosProvider.getListas('/listaDeCompra/'+id).then(data => {
+            this.nomeLista = JSON.parse(data['_body']); 
+            for (let index = 0; index < this.nomeLista.length; index++) {
+              colors.push(this.nomeLista[index]);
+              console.log(colors);
+            }
+            }).then(s =>{ this.showRadio(colors,produto);
+            });
           }
         },
         {
@@ -107,6 +122,32 @@ export class HomePage {
                   
     this.listaCarrinho.push(produto);
   
+  }
+
+  showRadio(colors,produto) {
+    let alert = this.alertCtrl.create();
+    alert.setTitle('Selecione a Lista');    
+    
+    colors.forEach(color => {
+        alert.addInput({
+            type: 'radio',
+            label: color.nome,
+            value: color,
+            checked: false
+        });
+    });
+    alert.addButton('Cancel');
+    alert.addButton({
+      text: 'OK',
+      handler: data => {                
+        this.produtoLista.id_produto = produto.id;
+        this.produtoLista.id_lista = data.id;        
+        this.produtosProvider.postLista('/listaDeCompra/adicionar', this.produtoLista).then(data =>{
+          console.log(data);
+        });
+      }
+    });
+    alert.present();
   }
         
   

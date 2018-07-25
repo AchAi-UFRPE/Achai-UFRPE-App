@@ -46,5 +46,9 @@ export class ListaDeComprasPage {
   itemClicked(lista){
     this.navCtrl.push(ListaDeComprasProdutosPage, {listaId: lista.id});
   }
+
+  public voltar():void{
+    this.navCtrl.pop();
+  }
   
 }

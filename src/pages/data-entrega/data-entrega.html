@@ -2,12 +2,12 @@
 
     <ion-item>
       <ion-label>Data de Entrega</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+      <ion-datetime displayFormat="DD/MM/YYYY" min='2018-07' max='2018-12-31' [(ngModel)]="myDate"></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-label>Horário</ion-label>
-      <ion-datetime displayFormat="HH:mm" [(ngModel)]="myHrr"></ion-datetime>
+      <ion-datetime displayFormat="HH:mm"  [(ngModel)]="myHrr"></ion-datetime>
     </ion-item>
 
     <div>
