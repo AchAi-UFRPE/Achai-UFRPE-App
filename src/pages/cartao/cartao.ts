@@ -73,10 +73,14 @@ unFormat(val) {
     cpftitular: null
   }
 
+  dados = [];
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public CadastroClienteProvider: CadastroClienteProvider,
     public alertCtrl: AlertController) {
+      this.dados = this.navParams.get('Dados');
+      console.log(this.dados);
   }
 
   ionViewDidLoad() {
@@ -96,7 +100,7 @@ public confirmacaoNumero(numero:String):Boolean{
       this.invalido("número");
       }
   }else{
-    this.invalido("nome");
+    this.invalido("número");
     }
 }
 
@@ -221,7 +225,7 @@ public irConfirmarCartao() {
       
       console.log("Eu recebi", dadosCartao); // data received by server 
       if (dadosCartao['_body'] != "[]"){        
-        this.navCtrl.push(DataEntregaPage); //mandar pra tela de sucesso
+        this.navCtrl.push(DataEntregaPage, {Dados: this.dados});
       }else{        
         this.showAlertFailedCadastro();
       }

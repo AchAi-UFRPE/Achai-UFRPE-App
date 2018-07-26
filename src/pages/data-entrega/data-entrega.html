@@ -1,4 +1,13 @@
+<ion-header>
+  <ion-toolbar color=primary >
+    <div class="back">
+    <img (click)="voltar()" src="assets/icon/left-arrow.png">
+  </div>
+  </ion-toolbar>
+</ion-header> 
 <ion-content padding>
+
+    <ion-label class="titulo">Agendar Entrega</ion-label>
 
     <ion-item>
       <ion-label>Data de Entrega</ion-label>
@@ -11,8 +20,8 @@
     </ion-item>
 
     <div>
-      <button (click)='showDate()' ion-button round full>
-        Me aperta vai
+      <button class="concluirbtn" (click)='showDate()' ion-button round full>
+        Concluir Compra
       </button>
     </div>
 

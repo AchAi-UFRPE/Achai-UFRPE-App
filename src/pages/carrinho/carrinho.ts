@@ -86,7 +86,7 @@ export class CarrinhoPage {
             data.id_usuario = id;
 
             console.log(data);
-            this.navCtrl.push(CartaoPage);            
+            this.navCtrl.push(CartaoPage, {Dados: data});            
           }
         },
         {

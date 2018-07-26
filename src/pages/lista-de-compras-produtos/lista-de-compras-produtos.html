@@ -7,7 +7,7 @@
 </ion-header> 
 <ion-content padding>
     <ion-list *ngFor="let produto of items">    
-        <ion-item (click)="itemClicked(produto)">
+        <ion-item>
           <ion-avatar item-start>
             <td><img src="assets/imgs/img_produtos/{{produto.id}}.png"/></td>
           </ion-avatar>
@@ -16,5 +16,11 @@
           <p>Quantidade: {{produto.quantidade}}</p>
         </ion-item>      
     </ion-list>
+
+    <div class='btn'>
+      <button (click)="show()" type="button" ion-button block outline>
+        Adicionar ao Carrinho
+      </button>
+    </div>
 
 </ion-content>

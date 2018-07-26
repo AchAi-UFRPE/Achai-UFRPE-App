@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ActionSheetController } from 'ionic-angular';
 import { ProdutosProvider } from '../../providers/services/produtosService';
+import { CarrinhoPage } from '../carrinho/carrinho';
 
 
 /**
@@ -20,6 +21,7 @@ export class ListaDeComprasProdutosPage {
   items: any;
   lista: any;
   idLista: any;
+  listaCarrinho = [];
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -45,6 +47,12 @@ export class ListaDeComprasProdutosPage {
 
   public voltar(){
     this.navCtrl.pop();
+  }
+
+  show(){
+  
+    this.navCtrl.push(CarrinhoPage, {listaCarrinho: this.items});
+
   }
 
 }
