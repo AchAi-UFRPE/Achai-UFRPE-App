@@ -30,6 +30,7 @@ import { HomeEntregadorPage } from '../pages/home-entregador/home-entregador';
 import { MinhasEntregasPage } from '../pages/minhas-entregas/minhas-entregas';
 import { ListaDeComprasProdutosPage } from '../pages/lista-de-compras-produtos/lista-de-compras-produtos';
 import { DataEntregaPage } from '../pages/data-entrega/data-entrega';
+import { LatLongProvider } from '../providers/services/LatLongService';
 
 
 @NgModule({
@@ -85,7 +86,8 @@ import { DataEntregaPage } from '../pages/data-entrega/data-entrega';
     LoginProvider,
     CadastroClienteProvider,
     CadastroEntregadorProvider,
-    ProdutosProvider
+    ProdutosProvider,
+    LatLongProvider
   ]
 })
 export class AppModule {}
